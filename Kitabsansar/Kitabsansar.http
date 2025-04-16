@@ -1,0 +1,6 @@
+@Kitabsansar_HostAddress = http://localhost:5260
+
+GET {{Kitabsansar_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
