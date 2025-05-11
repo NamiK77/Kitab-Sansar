@@ -1,0 +1,14 @@
+// using System.Collections.Generic;
+// using System.Threading.Tasks;
+// using Workshop.Models;
+
+// namespace Workshop.Service
+// {
+//     public interface IAnnouncementService
+// {
+//     Task AddAnnouncement(Announcement announcement);
+//     Task<Announcement> UpdateAnnouncement(int id, Announcement announcement);
+//     Task<bool> DeleteAnnouncement(int id);
+// }
+
+// }

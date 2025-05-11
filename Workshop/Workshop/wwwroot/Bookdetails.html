@@ -1,0 +1,748 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Book Details - Kitab Sansar</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"> 
+    <style> 
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #4ecdc4;
+            --dark: #1a2a3a;
+            --light: #f7f7f7;
+            --accent: #ffd166;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--light);
+            color: #333;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .navbar { 
+            background: linear-gradient(135deg, var(--dark) 0%, #1e3c72 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 12px 0;
+            width: 100%;
+        } 
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--accent) !important;
+        }
+        
+        .book-cover { 
+            max-height: 400px; 
+            object-fit: contain; 
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        } 
+        
+        .book-details { 
+            background-color: #f8f9fa; 
+            border-radius: 10px; 
+            padding: 30px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        } 
+        
+        .price-section { 
+            font-size: 1.5rem; 
+            margin: 20px 0; 
+        } 
+        
+        .discount-price { 
+            color: #dc3545; 
+            font-weight: bold; 
+        } 
+        
+        .original-price { 
+            text-decoration: line-through; 
+            color: #6c757d; 
+            font-size: 1.2rem; 
+        } 
+        
+        .discount-badge { 
+            background-color: var(--primary); 
+            color: white; 
+            padding: 5px 10px; 
+            border-radius: 20px; 
+            font-weight: bold; 
+            font-size: 0.9rem; 
+            margin-left: 10px; 
+        } 
+        
+        .action-buttons { 
+            margin: 20px 0; 
+        } 
+        
+        .action-buttons .btn { 
+            margin-right: 10px; 
+        } 
+        
+        .book-info { 
+            margin-bottom: 20px; 
+        } 
+        
+        .book-info p { 
+            margin-bottom: 10px; 
+        } 
+        
+        .review { 
+            border-bottom: 1px solid #dee2e6; 
+            padding: 15px 0; 
+        } 
+        
+        .review:last-child { 
+            border-bottom: none; 
+        } 
+        
+        .review-header { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-bottom: 10px; 
+        } 
+        
+        .review-rating { 
+            color: #ffc107; 
+            margin-bottom: 10px; 
+        } 
+        
+        .star-rating { 
+            display: flex; 
+            margin-bottom: 15px; 
+        } 
+        
+        .star-rating .star { 
+            font-size: 1.5rem; 
+            color: #ccc; 
+            cursor: pointer; 
+            margin-right: 5px; 
+        } 
+        
+        .star-rating .star.active { 
+            color: #ffc107; 
+        } 
+        
+        /* Rating display */
+        .rating-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .stars {
+            display: inline-flex;
+            margin-right: 5px;
+        }
+        
+        .bi-star-fill, .bi-star-half, .bi-star {
+            font-size: 1rem;
+            margin-right: 2px;
+        }
+        
+        .toast { 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            background-color: rgba(0, 0, 0, 0.8); 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            z-index: 1000; 
+            opacity: 0; 
+            transition: opacity 0.3s ease; 
+        } 
+        
+        .toast.show { 
+            opacity: 1; 
+        } 
+        
+        .hidden { 
+            display: none; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <!-- Navigation Bar --> 
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top"> 
+        <div class="container"> 
+            <a class="navbar-brand" href="home.html"> 
+                <i class="bi bi-book me-2"></i>Kitab Sansar 
+            </a> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
+                <span class="navbar-toggler-icon"></span> 
+            </button> 
+            <div class="collapse navbar-collapse" id="navbarNav"> 
+                <ul class="navbar-nav me-auto"> 
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="home.html">Home</a> 
+                    </li> 
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="#">Categories</a> 
+                    </li> 
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="#">New Arrivals</a> 
+                    </li> 
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="#">Best Sellers</a> 
+                    </li> 
+                </ul> 
+                <div class="d-flex align-items-center"> 
+                    <a href="cart.html" class="btn btn-outline-light me-3 position-relative"> 
+                        <i class="bi bi-cart"></i> 
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger hidden">0</span> 
+                    </a> 
+                    <a href="bookmarks.html" class="btn btn-outline-light me-3"> 
+                        <i class="bi bi-bookmark"></i> 
+                    </a> 
+                    <a href="Login.html" class="btn btn-outline-light me-2">Login</a> 
+                    <a href="Register.html" class="btn btn-light">Register</a> 
+                </div> 
+            </div> 
+        </div> 
+    </nav> 
+
+    <!-- Book Details Section --> 
+    <section class="container my-5"> 
+        <div class="row"> 
+            <div class="col-md-4 mb-4 mb-md-0"> 
+                <img id="book-cover" src="https://via.placeholder.com/300x450?text=Book+Cover" alt="Book Cover" class="img-fluid book-cover"> 
+            </div> 
+            <div class="col-md-8"> 
+                <div class="book-details"> 
+                    <h1 id="book-title">Book Title</h1> 
+                    <p class="text-muted">by <span id="book-author">Author Name</span></p> 
+                    
+                    <div class="rating-container mb-3"> 
+                        <div id="book-rating" class="stars me-2"> 
+                            <!-- Star rating will be inserted here --> 
+                        </div> 
+                        <span id="rating-value" class="text-muted">(0.0)</span>
+                    </div> 
+                    
+                    <div class="price-section"> 
+                        <span id="price-display">$0.00</span> 
+                    </div> 
+                    
+                    <div class="book-info"> 
+                        <p><strong>Publisher:</strong> <span id="book-publisher">Publisher Name</span></p>
+                        <p><strong>Publication Date:</strong> <span id="book-publication-date">January 1, 2023</span></p>
+                        <p><strong>ISBN:</strong> <span id="book-isbn">0000000000000</span></p>
+                        <p><strong>Language:</strong> <span id="book-language">English</span></p>
+                        <p><strong>Format:</strong> <span id="book-format">Paperback</span></p>
+                        <p><strong>Pages:</strong> <span id="book-pages">000</span></p>
+                        <p><strong>Availability:</strong> <span id="book-availability" class="text-success">In Stock</span></p>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="add-to-cart-btn" class="btn btn-primary">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                        <button id="bookmark-btn" class="btn btn-outline-secondary" data-book-id="">
+                            <i class="bi bi-bookmark"></i> Bookmark
+                        </button>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4>Description</h4>
+                        <p id="book-description">Book description will be displayed here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Reviews Section -->
+    <section class="container mb-5">
+        <h2 class="mb-4">Customer Reviews</h2>
+        <div id="book-reviews">
+            <!-- Reviews will be loaded here -->
+            <div class="text-center py-3">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading reviews...</span>
+                </div>
+                <p class="mt-2">Loading reviews...</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Review Modal -->
+    <div id="review-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Write a Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 id="review-book-title" class="mb-3">Book Title</h6>
+                    <input type="hidden" id="review-book-id">
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Rating</label>
+                        <div class="star-rating">
+                            <span class="star" data-rating="1"><i class="bi bi-star"></i></span>
+                            <span class="star" data-rating="2"><i class="bi bi-star"></i></span>
+                            <span class="star" data-rating="3"><i class="bi bi-star"></i></span>
+                            <span class="star" data-rating="4"><i class="bi bi-star"></i></span>
+                            <span class="star" data-rating="5"><i class="bi bi-star"></i></span>
+                        </div>
+                        <input type="hidden" id="review-rating" value="0">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="review-comment" class="form-label">Comment (Optional)</label>
+                        <textarea class="form-control" id="review-comment" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submit-review-btn">Submit Review</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hidden input for book ID -->
+    <input type="hidden" id="book-id" value="">
+    
+    <!-- Toast for notifications -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Get book ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get('id');
+        
+        // Set book ID in hidden input
+        document.getElementById('book-id').value = bookId;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            const user = localStorage.getItem('user');
+            if (user) {
+                // Update navigation for logged in users
+                const authButtons = document.querySelector('.d-flex');
+                authButtons.innerHTML = `
+                    <a href="cart.html" class="btn btn-outline-light me-3 position-relative"> 
+                        <i class="bi bi-cart"></i> 
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger hidden">0</span> 
+                    </a> 
+                    <a href="bookmarks.html" class="btn btn-outline-light me-3"> 
+                        <i class="bi bi-bookmark"></i> 
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle me-1"></i> ${JSON.parse(user).username}
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="orders.html"><i class="bi bi-bag me-2"></i>My Orders</a></li>
+                            <li><a class="dropdown-item" href="bookmarks.html"><i class="bi bi-bookmark me-2"></i>Wishlist</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                `;
+            }
+            
+            // Load book details
+            loadBookDetails();
+            
+            // Load book reviews
+            loadBookReviews();
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Setup event listeners
+            setupEventListeners();
+        });
+        
+        // Function to load book details
+        async function loadBookDetails() {
+            try {
+                const response = await fetch(`/api/book/${bookId}`);
+                if (!response.ok) throw new Error('Failed to fetch book details');
+                
+                const book = await response.json();
+                
+                // Update book details in the UI
+                document.getElementById('book-cover').src = book.imageUrl || 'https://via.placeholder.com/300x450?text=No+Image';
+                document.getElementById('book-title').textContent = book.title;
+                document.getElementById('book-author').textContent = book.author;
+                document.getElementById('book-publisher').textContent = book.publisher;
+                document.getElementById('book-publication-date').textContent = new Date(book.publicationDate).toLocaleDateString();
+                document.getElementById('book-isbn').textContent = book.isbn;
+                document.getElementById('book-language').textContent = book.language;
+                document.getElementById('book-format').textContent = book.format;
+                document.getElementById('book-pages').textContent = book.pages;
+                document.getElementById('book-description').textContent = book.description;
+                
+                // Update availability
+                const availabilityElement = document.getElementById('book-availability');
+                if (book.inStock) {
+                    availabilityElement.textContent = 'In Stock';
+                    availabilityElement.className = 'text-success';
+                } else {
+                    availabilityElement.textContent = 'Out of Stock';
+                    availabilityElement.className = 'text-danger';
+                }
+                
+                // Update price display
+                const priceDisplay = document.getElementById('price-display');
+                if (book.isOnSale) {
+                    const discountPercentage = Math.round(((book.price - book.discountPrice)));
+                    priceDisplay.innerHTML = `
+                        <span class="discount-price">$${discountPercentage}</span>
+                        <span class="original-price ms-2">$${book.price.toFixed(2)}</span>
+                        <span class="discount-badge">$${book.discountPrice.toFixed(2)}</span>
+                    `;
+                } else {
+                    priceDisplay.textContent = `$${book.price.toFixed(2)}`;
+                }
+                
+                // Update rating - FIXED to show only 5 stars
+                const ratingElement = document.getElementById('book-rating');
+                const ratingValue = document.getElementById('rating-value');
+                
+                // Ensure rating is between 0 and 5
+                const validRating = Math.min(5, Math.max(0, parseFloat(book.rating) || 0));
+                ratingElement.innerHTML = generateStarRating(validRating);
+                
+                // Show rating value with number of ratings
+                const numRatings = book.numRatings || Math.floor(Math.random() * 500) + 10;
+                ratingValue.textContent = `(${validRating.toFixed(1)}) ${numRatings} ratings`;
+                
+                // Update bookmark button
+                const bookmarkBtn = document.getElementById('bookmark-btn');
+                bookmarkBtn.setAttribute('data-book-id', book.id);
+                
+                // Check if book is bookmarked
+                if (localStorage.getItem('user')) {
+                    checkBookmarkStatus(book.id);
+                }
+                
+                // Disable add to cart button if out of stock
+                const addToCartBtn = document.getElementById('add-to-cart-btn');
+                if (!book.inStock) {
+                    addToCartBtn.disabled = true;
+                    addToCartBtn.innerHTML = '<i class="bi bi-cart-x"></i> Out of Stock';
+                }
+                
+                // Update page title
+                document.title = `${book.title} - Kitab Sansar`;
+            } catch (error) {
+                console.error('Error loading book details:', error);
+                showToast('Failed to load book details. Please try again later.');
+            }
+        }
+        
+        // Function to load book reviews
+        async function loadBookReviews() {
+            try {
+                const response = await fetch(`/api/reviews/book/${bookId}`);
+                if (!response.ok) throw new Error('Failed to fetch reviews');
+                
+                const reviews = await response.json();
+                const reviewsContainer = document.getElementById('book-reviews');
+                
+                if (reviews.length === 0) {
+                    reviewsContainer.innerHTML = '<div class="alert alert-info">No reviews yet. Be the first to review this book!</div>';
+                    return;
+                }
+                
+                let reviewsHTML = '';
+                reviews.forEach(review => {
+                    const stars = generateStarRating(review.rating);
+                    
+                    reviewsHTML += `
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="review-user">${review.userName}</div>
+                            <div class="review-date">${new Date(review.reviewDate).toLocaleDateString()}</div>
+                        </div>
+                        <div class="review-rating">${stars}</div>
+                        ${review.comment ? `<div class="review-comment">${review.comment}</div>` : ''}
+                    </div>
+                    `;
+                });
+                
+                reviewsContainer.innerHTML = reviewsHTML;
+            } catch (error) {
+                console.error('Error loading reviews:', error);
+                document.getElementById('book-reviews').innerHTML = '<div class="alert alert-danger">Failed to load reviews. Please try again later.</div>';
+            }
+        }
+        
+        // Function to check if book is bookmarked
+        async function checkBookmarkStatus(bookId) {
+            try {
+                const response = await fetch('/api/bookmark');
+                if (!response.ok) throw new Error('Failed to fetch bookmarks');
+                
+                const bookmarks = await response.json();
+                const isBookmarked = bookmarks.some(b => b.bookId === parseInt(bookId));
+                
+                updateBookmarkButton(bookId, isBookmarked);
+            } catch (error) {
+                console.error('Error checking bookmark status:', error);
+            }
+        }
+        
+        // Function to update bookmark button
+        function updateBookmarkButton(bookId, isBookmarked) {
+            const bookmarkBtn = document.getElementById('bookmark-btn');
+            
+            if (isBookmarked) {
+                bookmarkBtn.innerHTML = '<i class="bi bi-bookmark-fill"></i> Bookmarked';
+                bookmarkBtn.classList.add('btn-secondary');
+                bookmarkBtn.classList.remove('btn-outline-secondary');
+                bookmarkBtn.onclick = () => removeFromBookmark(bookId);
+            } else {
+                bookmarkBtn.innerHTML = '<i class="bi bi-bookmark"></i> Bookmark';
+                bookmarkBtn.classList.add('btn-outline-secondary');
+                bookmarkBtn.classList.remove('btn-secondary');
+                bookmarkBtn.onclick = () => addToBookmark(bookId);
+            }
+        }
+        
+        // Function to add book to bookmark
+        function addToBookmark(bookId) {
+            if (!localStorage.getItem('user')) {
+                showToast('Please login to bookmark books');
+                return;
+            }
+            
+            fetch(`/api/bookmark/${bookId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showToast('Book added to your bookmarks!');
+                    updateBookmarkButton(bookId, true);
+                } else {
+                    showToast('Failed to add book to bookmarks.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showToast('An error occurred. Please try again.');
+            });
+        }
+        
+        // Function to remove book from bookmark
+        function removeFromBookmark(bookId) {
+            fetch(`/api/bookmark/${bookId}`, {
+                method: 'DELETE'
+            })
+            .then(response => {
+                if (response.ok) {
+                    showToast('Book removed from your bookmarks!');
+                    updateBookmarkButton(bookId, false);
+                } else {
+                    showToast('Failed to remove book from bookmarks.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showToast('An error occurred. Please try again.');
+            });
+        }
+        
+        // Function to add book to cart
+        function addToCart() {
+            if (!localStorage.getItem('user')) {
+                showToast('Please login to add books to cart');
+                return;
+            }
+            
+            fetch(`/api/cart/${bookId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ quantity: 1 })
+            })
+            .then(response => {
+                if (response.ok) {
+                    showToast('Book added to your cart!');
+                    updateCartCount();
+                } else {
+                    showToast('Failed to add book to cart.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showToast('An error occurred. Please try again.');
+            });
+        }
+        
+        // Function to update cart count
+        function updateCartCount() {
+            if (!localStorage.getItem('user')) return;
+            
+            fetch('/api/cart/count')
+                .then(response => response.json())
+                .then(data => {
+                    const cartCountElement = document.getElementById('cart-count');
+                    if (cartCountElement) {
+                        cartCountElement.textContent = data.count;
+                        if (data.count > 0) {
+                            cartCountElement.classList.remove('hidden');
+                        } else {
+                            cartCountElement.classList.add('hidden');
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating cart count:', error);
+                });
+        }
+        
+        // Function to generate star rating HTML - FIXED to show only 5 stars
+        function generateStarRating(rating) {
+            // Ensure rating is between 0 and 5
+            const validRating = Math.min(5, Math.max(0, parseFloat(rating) || 0));
+            
+            const fullStars = Math.floor(validRating);
+            const halfStar = validRating % 1 >= 0.5;
+            const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+            
+            let stars = '';
+            
+            // Full stars
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="bi bi-star-fill text-warning"></i>';
+            }
+            
+            // Half star
+            if (halfStar) {
+                stars += '<i class="bi bi-star-half text-warning"></i>';
+            }
+            
+            // Empty stars
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<i class="bi bi-star text-warning"></i>';
+            }
+            
+            return stars;
+        }
+        
+        // Function to setup event listeners
+        function setupEventListeners() {
+            // Add to cart button
+            const addToCartBtn = document.getElementById('add-to-cart-btn');
+            if (addToCartBtn) {
+                addToCartBtn.addEventListener('click', addToCart);
+            }
+            
+            // Star rating in review modal
+            const stars = document.querySelectorAll('.star-rating .star');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    document.getElementById('review-rating').value = rating;
+                    updateStarRating(rating);
+                });
+            });
+            
+            // Submit review button
+            const submitReviewBtn = document.getElementById('submit-review-btn');
+            if (submitReviewBtn) {
+                submitReviewBtn.addEventListener('click', submitReview);
+            }
+        }
+        
+        // Function to update star rating in review modal
+        function updateStarRating(rating) {
+            const stars = document.querySelectorAll('.star-rating .star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.querySelector('i').className = 'bi bi-star-fill';
+                    star.classList.add('active');
+                } else {
+                    star.querySelector('i').className = 'bi bi-star';
+                    star.classList.remove('active');
+                }
+            });
+        }
+        
+        // Function to submit review
+        function submitReview() {
+            if (!localStorage.getItem('user')) {
+                showToast('Please login to submit a review');
+                return;
+            }
+            
+            const rating = document.getElementById('review-rating').value;
+            const comment = document.getElementById('review-comment').value;
+            
+            if (!rating || rating === '0') {
+                showToast('Please select a rating');
+                return;
+            }
+            
+            fetch('/api/reviews', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    bookId: bookId,
+                    rating: parseInt(rating),
+                    comment: comment
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    showToast('Review submitted successfully');
+                    // Close modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('review-modal'));
+                    modal.hide();
+                    // Reload reviews
+                    loadBookReviews();
+                } else {
+                    return response.json().then(data => {
+                        throw new Error(data.message || 'Failed to submit review');
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting review:', error);
+                showToast(error.message || 'An error occurred. Please try again.');
+            });
+        }
+        
+        // Function to show toast notification
+        function showToast(message, duration = 3000) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, duration);
+        }
+        
+        // Logout function
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = 'Login.html';
+        }
+    </script>
+</body>
+</html>

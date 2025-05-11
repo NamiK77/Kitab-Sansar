@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style type="text/css">
+        /* Reset styles */
+        body, p, td, th {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #333333;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Responsive design */
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+            }
+            .content {
+                padding: 0 !important;
+            }
+            .header {
+                padding: 20px 15px !important;
+            }
+            .footer {
+                padding: 20px 15px !important;
+            }
+            .section {
+                padding: 20px 15px !important;
+            }
+            .item-row td {
+                display: block !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .item-image {
+                margin-bottom: 10px !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f7f7f7;">
+    <!-- Main Container -->
+    <table class="container" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+        <!-- Header -->
+        <tr>
+            <td class="header" align="center" style="padding: 30px 20px; background-color: #1a365d; color: #ffffff;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td align="center">
+                            <h1 style="margin: 0; font-size: 24px; font-weight: bold; color: #ffffff;">BookStore</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding-top: 10px;">
+                            <p style="margin: 0; font-size: 16px; color: #ffffff;">Order Confirmation</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- Greeting Section -->
+        <tr>
+            <td class="section" style="padding: 30px 20px; background-color: #ffffff;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td>
+                            <p style="margin: 0; font-size: 16px;">Hi <span style="font-weight: bold;">{user.Username}</span>,</p>
+                            <p style="margin: 15px 0 0;">Thank you for your order! We're excited to get your books to you as soon as possible. Here's a summary of your purchase:</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- Order Summary Section -->
+        <tr>
+            <td class="section" style="padding: 0 20px 30px; background-color: #ffffff;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0;">
+                    <tr>
+                        <td style="padding: 15px; background-color: #f9f9f9; border-bottom: 1px solid #e0e0e0;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td>
+                                        <h2 style="margin: 0; font-size: 18px; color: #1a365d;">Order Summary</h2>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-bottom: 10px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td width="50%" style="font-weight: bold;">Order Number:</td>
+                                                <td width="50%" align="right">#{orderId}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 10px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td width="50%" style="font-weight: bold;">Order Date:</td>
+                                                <td width="50%" align="right">{order.OrderDate.ToString("MMMM dd, yyyy")}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 10px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td width="50%" style="font-weight: bold;">Payment Method:</td>
+                                                <td width="50%" align="right">{order.PaymentMethod}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 10px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td width="50%" style="font-weight: bold;">Total:</td>
+                                                <td width="50%" align="right" style="font-weight: bold; color: #1a365d;">${order.TotalAmount:0.00}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td width="50%" style="font-weight: bold; color: #1a365d;">Claim Code:</td>
+                                                <td width="50%" align="right" style="font-weight: bold; color: #1a365d; letter-spacing: 1px;">{order.ClaimCode}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- Order Items Section -->
+        <tr>
+            <td class="section" style="padding: 0 20px 30px; background-color: #ffffff;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0;">
+                    <tr>
+                        <td style="padding: 15px; background-color: #f9f9f9; border-bottom: 1px solid #e0e0e0;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td>
+                                        <h2 style="margin: 0; font-size: 18px; color: #1a365d;">Order Items</h2>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <!-- This section would be repeated for each item in the order -->
+                                <!-- Removed static item row to ensure only dynamic rows are displayed -->
+                                <!--
+                                <tr class="item-row" style="border-bottom: 1px solid #e0e0e0;">
+                                    <td class="item-image" width="80" style="padding-bottom: 15px; vertical-align: top;">
+                                        <img src="{item.CoverImageUrl}" alt="Book Cover" width="70" height="auto" style="display: block; border: 1px solid #e0e0e0;">
+                                    </td>
+                                    <td style="padding-bottom: 15px; padding-left: 10px; vertical-align: top;">
+                                        <p style="margin: 0; font-weight: bold;">{item.Title}</p>
+                                        <p style="margin: 5px 0 0; color: #666666;">Qty: {item.Quantity}</p>
+                                        <p style="margin: 5px 0 0; font-weight: bold;">${item.Price:0.00}</p>
+                                    </td>
+                                </tr>
+                                -->
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- Shipping Address Section -->
+        <tr>
+            <td class="section" style="padding: 0 20px 30px; background-color: #ffffff;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0;">
+                    <tr>
+                        <td style="padding: 15px; background-color: #f9f9f9; border-bottom: 1px solid #e0e0e0;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td>
+                                        <h2 style="margin: 0; font-size: 18px; color: #1a365d;">Shipping Address</h2>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px;">
+                            <p style="margin: 0; line-height: 1.6;">{order.ShippingAddress}</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- CTA Section -->
+        <tr>
+            <td class="section" style="padding: 0 20px 30px; background-color: #ffffff; text-align: center;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- Footer -->
+        <tr>
+            <td class="footer" style="padding: 30px 20px; background-color: #f0f4f8; text-align: center; color: #666666;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td align="center">
+                            <p style="margin: 0; font-size: 14px;">If you have any questions, please contact our customer service team.</p>
+                            <p style="margin: 10px 0 0; font-size: 14px;">Email: support@bookstore.com | Phone: (555) 123-4567</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding-top: 20px;">
+                            <p style="margin: 0; font-size: 12px; color: #999999;">© 2024 BookStore. All rights reserved.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
