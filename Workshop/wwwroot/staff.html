@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitab Sansar - Staff Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary: #5e35b1;
+            --primary-light: #7e57c2;
+            --primary-dark: #4527a0;
+            --primary-hover: #4527a0;
+            --secondary: #f3f4f6;
+            --success: #00c853;
+            --danger: #f44336;
+            --warning: #ffab00;
+            --info: #2196f3;
+            --dark: #212121;
+            --light: #f9fafb;
+            --border: #e5e7eb;
+            --text: #424242;
+            --text-light: #757575;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 0.5rem;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem 2rem;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.25rem;
+        }
+
+        .logout-btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .logout-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .dashboard-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .dashboard-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: white;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-title svg {
+            color: var(--primary);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        .input-wrapper svg {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(94, 53, 177, 0.2);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .alert-success {
+            background: rgba(0, 200, 83, 0.1);
+            border-left: 4px solid var(--success);
+            color: var(--success);
+        }
+
+        .alert-danger {
+            background: rgba(244, 67, 54, 0.1);
+            border-left: 4px solid var(--danger);
+            color: var(--danger);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: #f8fafc;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border);
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: #f9fafb;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .status-pending {
+            background: rgba(255, 171, 0, 0.1);
+            color: var(--warning);
+        }
+
+        .status-processed {
+            background: rgba(0, 200, 83, 0.1);
+            color: var(--success);
+        }
+
+        .status-select {
+            padding: 0.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: white;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .status-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .price {
+            font-weight: 600;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            color: var(--text-light);
+        }
+
+        .loading::after {
+            content: '';
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid #e5e7eb;
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 0.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Analytics Dashboard Styles */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .analytics-card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analytics-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+        }
+
+        .analytics-card:nth-child(2)::before {
+            background: var(--warning);
+        }
+
+        .analytics-card:nth-child(3)::before {
+            background: var(--success);
+        }
+
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .analytics-card-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .analytics-card-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .analytics-card:nth-child(2) .analytics-card-value {
+            color: var(--warning);
+        }
+
+        .analytics-card:nth-child(3) .analytics-card-value {
+            color: var(--success);
+        }
+
+        .analytics-card-trend {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .trend-up {
+            color: var(--success);
+        }
+
+        .trend-down {
+            color: var(--danger);
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            height: 300px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .chart-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .chart-legend {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+
+        .total-color {
+            background-color: var(--primary);
+        }
+
+        .pending-color {
+            background-color: var(--warning);
+        }
+
+        .processed-color {
+            background-color: var(--success);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: slideIn 0.3s ease-out forwards;
+        }
+
+        .toast-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .toast-error {
+            background: var(--danger);
+            color: white;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .input-group {
+                flex-direction: column;
+            }
+            
+            .dashboard-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .card-title {
+                font-size: 1.1rem;
+            }
+            
+            th, td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            .analytics-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .analytics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    Kitab Sansar
+                </div>
+            </div>
+            <button class="logout-btn" onclick="goBack()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Logout
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h1 class="dashboard-title">Staff Dashboard</h1>
+        </div>
+
+        <!-- Analytics Dashboard -->
+        <div class="analytics-grid">
+            <div class="analytics-card">
+                <div class="analytics-card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"></path>
+                        <path d="M21 12H3"></path>
+                        <path d="M9 3v18"></path>
+                    </svg>
+                    Total Orders
+                </div>
+                <div class="analytics-card-value" id="total-orders">0</div>
+                <div class="analytics-card-trend trend-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m5 12 7-7 7 7"></path>
+                        <path d="M12 19V5"></path>
+                    </svg>
+                    <span id="total-orders-trend">0%</span> from last month
+                </div>
+            </div>
+            <div class="analytics-card">
+                <div class="analytics-card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Pending Orders
+                </div>
+                <div class="analytics-card-value" id="pending-orders">0</div>
+                <div class="analytics-card-trend trend-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m5 12 7-7 7 7"></path>
+                        <path d="M12 19V5"></path>
+                    </svg>
+                    <span id="pending-orders-trend">0%</span> from last month
+                </div>
+            </div>
+            <div class="analytics-card">
+                <div class="analytics-card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    Processed Orders
+                </div>
+                <div class="analytics-card-value" id="processed-orders">0</div>
+                <div class="analytics-card-trend trend-down">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m19 12-7 7-7-7"></path>
+                        <path d="M12 5v14"></path>
+                    </svg>
+                    <span id="processed-orders-trend">0%</span> from last month
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart-container">
+            <div class="chart-header">
+                <div class="chart-title">Order Statistics</div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-color total-color"></div>
+                        <span>Total</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color pending-color"></div>
+                        <span>Pending</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color processed-color"></div>
+                        <span>Processed</span>
+                    </div>
+                </div>
+            </div>
+            <canvas id="ordersChart"></canvas>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"></path>
+                        <path d="M21 12H3"></path>
+                        <path d="M9 3v18"></path>
+                    </svg>
+                    Process Order by Claim Code
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                            <circle cx="12" cy="12" r="4"></circle>
+                        </svg>
+                        <input type="text" id="claimCodeInput" class="form-input" placeholder="Enter claim code">
+                    </div>
+                    <button onclick="processClaimCode()" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                        Process Order
+                    </button>
+                </div>
+                <div id="claimCodeResult"></div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>User ID</th>
+                        <th>Order Date</th>
+                        <th>Status</th>
+                        <th>Subtotal</th>
+                        <th>Discount</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="orderTableBody">
+                    <tr>
+                        <td colspan="8" class="loading">Loading orders</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Configure base API URL
+        const API_BASE_URL = 'http://localhost:5239';
+        
+        // Chart instance
+        let ordersChart;
+
+        // Function to navigate back
+        function goBack() {
+            window.history.back();
+        }
+
+        async function fetchOrders() {
+            try {
+                const token = localStorage.getItem('token');
+                const response = await fetch(`${API_BASE_URL}/api/staff/orders/details`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                const orders = await response.json();
+                const tableBody = document.getElementById('orderTableBody');
+                tableBody.innerHTML = '';
+
+                if (orders.length === 0) {
+                    tableBody.innerHTML = `
+                        <tr>
+                            <td colspan="8" class="empty-state">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1rem; display: block;">
+                                    <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                                    <line x1="3" x2="21" y1="9" y2="9"></line>
+                                    <path d="M9 16h6"></path>
+                                </svg>
+                                No orders found
+                            </td>
+                        </tr>
+                    `;
+                    return;
+                }
+
+                // Update analytics
+                updateAnalytics(orders);
+
+                orders.forEach(order => {
+                    const row = document.createElement('tr');
+    
+                    // Convert status code to readable text
+                    let statusText = "Unknown";
+                    let statusClass = "";
+                    if (order.status === 0 || order.status === "0") {
+                        statusText = "Pending";
+                        statusClass = "status-pending";
+                    } else if (order.status === 1 || order.status === "1") {
+                        statusText = "Processed";
+                        statusClass = "status-processed";
+                    }
+                    
+                    row.innerHTML = `
+                        <td>#${order.id}</td>
+                        <td>${order.userId ?? 'N/A'}</td>
+                        <td>${new Date(order.orderDate).toLocaleDateString()}</td>
+                        <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+                        <td class="price">$${order.subtotal?.toFixed(2) ?? '0.00'}</td>
+                        <td class="price">$${order.discountAmount?.toFixed(2) ?? '0.00'}</td>
+                        <td class="price">$${order.total?.toFixed(2) ?? order.totalAmount?.toFixed(2) ?? '0.00'}</td>
+                        <td>
+                            <select class="status-select" onchange="updateOrderStatus(${order.id}, this.value)">
+                                <option value="0" ${order.status === 0 || order.status === "0" ? 'selected' : ''}>Pending</option>
+                                <option value="1" ${order.status === 1 || order.status === "1" ? 'selected' : ''}>Processed</option>
+                            </select>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching orders:', error);
+                document.getElementById('orderTableBody').innerHTML = `
+                    <tr>
+                        <td colspan="8" class="empty-state">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1rem; display: block; color: var(--danger);">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" x2="12" y1="8" y2="12"></line>
+                                <line x1="12" x2="12.01" y1="16" y2="16"></line>
+                            </svg>
+                            Failed to load orders: ${error.message}
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+
+        function updateAnalytics(orders) {
+            // Count total, pending, and processed orders
+            const totalOrders = orders.length;
+            const pendingOrders = orders.filter(order => order.status === 0 || order.status === "0").length;
+            const processedOrders = orders.filter(order => order.status === 1 || order.status === "1").length;
+            
+            // Update the analytics cards
+            document.getElementById('total-orders').textContent = totalOrders;
+            document.getElementById('pending-orders').textContent = pendingOrders;
+            document.getElementById('processed-orders').textContent = processedOrders;
+            
+            // Simulate trend data (in a real app, you would fetch historical data)
+            document.getElementById('total-orders-trend').textContent = '12%';
+            document.getElementById('pending-orders-trend').textContent = '8%';
+            document.getElementById('processed-orders-trend').textContent = '3%';
+            
+            // Update the chart
+            updateOrdersChart(totalOrders, pendingOrders, processedOrders);
+        }
+
+        function updateOrdersChart(totalOrders, pendingOrders, processedOrders) {
+            const ctx = document.getElementById('ordersChart').getContext('2d');
+            
+            // Generate labels for the last 6 months
+            const labels = [];
+            const currentDate = new Date();
+            for (let i = 5; i >= 0; i--) {
+                const date = new Date(currentDate);
+                date.setMonth(currentDate.getMonth() - i);
+                labels.push(date.toLocaleString('default', { month: 'short' }));
+            }
+            
+            // Generate random data for demonstration
+            // In a real app, you would use actual historical data
+            const totalData = [
+                Math.floor(Math.random() * 20) + 10,
+                Math.floor(Math.random() * 20) + 15,
+                Math.floor(Math.random() * 20) + 20,
+                Math.floor(Math.random() * 20) + 25,
+                Math.floor(Math.random() * 20) + 30,
+                totalOrders
+            ];
+            
+            const pendingData = [
+                Math.floor(Math.random() * 10) + 5,
+                Math.floor(Math.random() * 10) + 8,
+                Math.floor(Math.random() * 10) + 10,
+                Math.floor(Math.random() * 10) + 12,
+                Math.floor(Math.random() * 10) + 15,
+                pendingOrders
+            ];
+            
+            const processedData = [
+                Math.floor(Math.random() * 10) + 5,
+                Math.floor(Math.random() * 10) + 7,
+                Math.floor(Math.random() * 10) + 10,
+                Math.floor(Math.random() * 10) + 13,
+                Math.floor(Math.random() * 10) + 15,
+                processedOrders
+            ];
+            
+            // Destroy existing chart if it exists
+            if (ordersChart) {
+                ordersChart.destroy();
+            }
+            
+            // Create new chart
+            ordersChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Total Orders',
+                            data: totalData,
+                            backgroundColor: 'rgba(94, 53, 177, 0.7)',
+                            borderColor: 'rgba(94, 53, 177, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Pending Orders',
+                            data: pendingData,
+                            backgroundColor: 'rgba(255, 171, 0, 0.7)',
+                            borderColor: 'rgba(255, 171, 0, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Processed Orders',
+                            data: processedData,
+                            backgroundColor: 'rgba(0, 200, 83, 0.7)',
+                            borderColor: 'rgba(0, 200, 83, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    }
+                }
+            });
+        }
+
+        async function processClaimCode() {
+            const claimCode = document.getElementById('claimCodeInput').value.trim();
+            const resultDiv = document.getElementById('claimCodeResult');
+            resultDiv.innerHTML = '';
+            
+            if (!claimCode) {
+                resultDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" x2="12" y1="8" y2="12"></line>
+                            <line x1="12" x2="12.01" y1="16" y2="16"></line>
+                        </svg>
+                        Please enter a claim code
+                    </div>`;
+                return;
+            }
+            
+            try {
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" x2="12" y1="8" y2="12"></line>
+                                <line x1="12" x2="12.01" y1="16" y2="16"></line>
+                            </svg>
+                            You need to be logged in
+                        </div>`;
+                    return;
+                }
+                
+                resultDiv.innerHTML = `
+                    <div class="loading" style="justify-content: flex-start;">
+                        Processing claim code
+                    </div>`;
+                
+                const response = await fetch(`${API_BASE_URL}/api/staff/orders/process-claim`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ claimCode })
+                });
+                
+                if (!response.ok) {
+                    const contentType = response.headers.get("content-type");
+                    if (contentType && contentType.indexOf("application/json") !== -1) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || `HTTP error! Status: ${response.status}`);
+                    } else {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                }
+                
+                const result = await response.json();
+                resultDiv.innerHTML = `
+                    <div class="alert alert-success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        ${result.message} (Order #${result.orderId}, Status: ${result.status})
+                    </div>
+                `;
+                
+                fetchOrders();
+                document.getElementById('claimCodeInput').value = '';
+            } catch (error) {
+                console.error('Error processing claim code:', error);
+                resultDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" x2="12" y1="8" y2="12"></line>
+                            <line x1="12" x2="12.01" y1="16" y2="16"></line>
+                        </svg>
+                        Failed to process claim code: ${error.message}
+                    </div>
+                `;
+            }
+        }
+    
+        async function updateOrderStatus(orderId, status) {
+            try {
+                const token = localStorage.getItem('token');
+                const backendStatus = status === 'Pending' ? 'PendingPickup' : status;
+                
+                // Show loading state
+                const tableBody = document.getElementById('orderTableBody');
+                tableBody.style.opacity = '0.7';
+                
+                const response = await fetch(`${API_BASE_URL}/api/staff/orders/${orderId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ status: backendStatus })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                // Create and show a toast notification
+                showToast('Order status updated successfully', 'success');
+                
+                fetchOrders();
+            } catch (error) {
+                console.error('Error updating order status:', error);
+                
+                // Create and show an error toast
+                showToast(`Failed to update order status: ${error.message}`, 'error');
+            } finally {
+                // Reset loading state
+                const tableBody = document.getElementById('orderTableBody');
+                tableBody.style.opacity = '1';
+            }
+        }
+
+        function showToast(message, type = 'success') {
+            // Remove any existing toasts
+            const existingToasts = document.querySelectorAll('.toast');
+            existingToasts.forEach(toast => {
+                document.body.removeChild(toast);
+            });
+            
+            // Create new toast
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            
+            // Set icon based on type
+            let icon = '';
+            if (type === 'success') {
+                icon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>`;
+            } else {
+                icon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" x2="12" y1="8" y2="12"></line>
+                    <line x1="12" x2="12.01" y1="16" y2="16"></line>
+                </svg>`;
+            }
+            
+            toast.innerHTML = `${icon} ${message}`;
+            document.body.appendChild(toast);
+            
+            // Remove the toast after 3 seconds
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease-in forwards';
+                setTimeout(() => {
+                    if (document.body.contains(toast)) {
+                        document.body.removeChild(toast);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchOrders();
+        });
+    </script>
+</body>
+</html>

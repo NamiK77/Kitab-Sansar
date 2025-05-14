@@ -1,0 +1,963 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Review Order</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Review Order</h1>
+    <form id="reviewForm">
+      <div class="mb-3">
+        <label for="rating" class="form-label">Rating (1-5)</label>
+        <input type="number" class="form-control" id="rating" min="1" max="5" required />
+      </div>
+      <div class="mb-3">
+        <label for="reviewText" class="form-label">Your Review</label>
+        <textarea class="form-control" id="reviewText" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Review</button>
+    </form>
+    <div id="message" class="alert d-none mt-3"></div>
+  </div>
+
+  <script>
+    document.getElementById('reviewForm').onsubmit = function (event) {
+      event.preventDefault();
+
+      const rating = parseInt(document.getElementById('rating').value, 10);
+      const reviewText = document.getElementById('reviewText').value;
+      const urlParams = new URLSearchParams(window.location.search);
+      const orderId = parseInt(urlParams.get('orderId'), 10);
+      const bookId = parseInt(urlParams.get('bookId'), 10);
+      const token = localStorage.getItem('token');
+
+      if (!token) {
+        showMessage("You must be logged in.", "danger");
+        return;
+      }
+
+      fetch('/api/review', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify({
+          bookId,
+          orderId,
+          rating,
+          comment: reviewText
+        })
+      })
+      .then(res => res.json().then(data => ({ ok: res.ok, data })))
+      .then(({ ok, data }) => {
+        if (!ok) {
+          showMessage(data.message || "Review failed", "danger");
+        } else {
+          showMessage("Review submitted successfully!", "success");
+          setTimeout(() => window.location.href = 'orders.html', 2000);
+        }
+      })
+      .catch(err => showMessage(err.message, "danger"));
+    };
+
+    function showMessage(msg, type) {
+      const messageDiv = document.getElementById('message');
+      messageDiv.textContent = msg;
+      messageDiv.className = 'alert alert-' + type;
+      messageDiv.classList.remove('d-none');
+    }
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Share Your Literary Thoughts | Kitab Sansar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7D5A50;
+      --primary-light: #B4846C;
+      --secondary: #E5B299;
+      --accent: #FCDEC0;
+      --dark: #2D2424;
+      --light: #FDF7F2;
+      --success: #4CAF50;
+      --warning: #FF9800;
+      --danger: #F44336;
+      --gray-100: #f8f9fa;
+      --gray-200: #e9ecef;
+      --gray-300: #dee2e6;
+      --gray-400: #ced4da;
+      --gray-500: #adb5bd;
+      --gray-600: #6c757d;
+      --gray-700: #495057;
+      --gray-800: #343a40;
+      --gray-900: #212529;
+      --transition: all 0.3s ease;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+      --shadow: 0 4px 6px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+      --radius-sm: 4px;
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B4846C' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      z-index: -1;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+    }
+
+    .page-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .review-card {
+      background-color: white;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .review-header {
+      background-color: var(--primary);
+      padding: 30px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .review-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23B4846C' fill-opacity='0.2' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 15px;
+      backdrop-filter: blur(5px);
+      transition: var(--transition);
+    }
+
+    .back-btn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      color: white;
+    }
+
+    .back-btn i {
+      margin-right: 8px;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-subtitle {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0.9;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+    }
+
+    .book-preview {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .book-cover {
+      width: 60px;
+      height: 80px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      margin-right: 15px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .book-cover i {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .book-info h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .book-info p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .review-body {
+      padding: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .star-rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating label {
+      cursor: pointer;
+      font-size: 2rem;
+      color: var(--gray-300);
+      transition: var(--transition);
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover ~ label,
+    .star-rating input:checked ~ label {
+      color: var(--warning);
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+      transform: scale(1.2);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+      background-color: white;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(125, 90, 80, 0.2);
+    }
+
+    .form-control::placeholder {
+      color: var(--gray-500);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .character-count {
+      display: block;
+      text-align: right;
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      margin-top: 5px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    .btn-secondary {
+      background-color: var(--gray-200);
+      color: var(--gray-700);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--gray-300);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .alert {
+      padding: 15px;
+      border-radius: var(--radius);
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      animation: slideIn 0.3s ease;
+    }
+
+    .alert i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    .alert-success {
+      background-color: rgba(76, 175, 80, 0.1);
+      border: 1px solid rgba(76, 175, 80, 0.3);
+      color: var(--success);
+    }
+
+    .alert-danger {
+      background-color: rgba(244, 67, 54, 0.1);
+      border: 1px solid rgba(244, 67, 54, 0.3);
+      color: var(--danger);
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .review-footer {
+      background-color: var(--gray-100);
+      padding: 20px 30px;
+      border-top: 1px solid var(--gray-200);
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--gray-600);
+    }
+
+    .review-footer p {
+      margin: 0;
+    }
+
+    .review-tips {
+      background-color: var(--accent);
+      border-radius: var(--radius);
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    .review-tips h4 {
+      font-size: 1.1rem;
+      margin: 0 0 10px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+    }
+
+    .review-tips h4 i {
+      margin-right: 8px;
+    }
+
+    .review-tips ul {
+      margin: 0;
+      padding-left: 25px;
+    }
+
+    .review-tips li {
+      margin-bottom: 5px;
+      color: var(--gray-700);
+    }
+
+    /* Loading animation */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .loading-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .loading-spinner {
+      position: relative;
+      width: 60px;
+      height: 60px;
+    }
+
+    .book-loading {
+      position: absolute;
+      width: 40px;
+      height: 30px;
+      background-color: var(--primary);
+      border-radius: 3px;
+      top: 15px;
+      left: 10px;
+      transform-origin: 0% 50%;
+      animation: flip 1.2s infinite;
+      transform-style: preserve-3d;
+    }
+
+    .book-loading::before {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 30px;
+      border-radius: 3px;
+      background-color: white;
+      transform: translateZ(-5px);
+      box-shadow: -5px 5px 5px rgba(0,0,0,0.1);
+    }
+
+    .book-loading::after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 30px;
+      background-color: var(--primary-light);
+      left: 0;
+      top: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    @keyframes flip {
+      0% { transform: rotateY(0deg); }
+      50% { transform: rotateY(-180deg); }
+      100% { transform: rotateY(0deg); }
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .page-container {
+        padding: 20px 15px;
+      }
+
+      .review-header {
+        padding: 20px;
+      }
+
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .review-body {
+        padding: 20px;
+      }
+
+      .form-actions {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .form-actions .btn {
+        width: 100%;
+      }
+    }
+
+    /* Success animation */
+    .success-animation {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .success-animation.active {
+      display: flex;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .checkmark-circle {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      margin-bottom: 20px;
+    }
+
+    .checkmark-circle .background {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--success);
+      position: absolute;
+    }
+
+    .checkmark-circle .checkmark {
+      border-radius: 5px;
+    }
+
+    .checkmark-circle .checkmark.draw:after {
+      animation-delay: 100ms;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-name: checkmark;
+      transform: scaleX(-1) rotate(135deg);
+      animation-fill-mode: forwards;
+    }
+
+    .checkmark-circle .checkmark:after {
+      opacity: 0;
+      height: 40px;
+      width: 20px;
+      transform-origin: left top;
+      border-right: 7px solid white;
+      border-top: 7px solid white;
+      content: '';
+      left: 25px;
+      top: 40px;
+      position: absolute;
+    }
+
+    @keyframes checkmark {
+      0% {
+        height: 0;
+        width: 0;
+        opacity: 0;
+      }
+      20% {
+        height: 0;
+        width: 20px;
+        opacity: 1;
+      }
+      40% {
+        height: 40px;
+        width: 20px;
+        opacity: 1;
+      }
+      100% {
+        height: 40px;
+        width: 20px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .success-message {
+      font-size: 1.5rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .success-submessage {
+      color: var(--gray-600);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <div class="review-card">
+      <div class="review-header">
+        <a href="orders.html" class="back-btn">
+          <i class="bi bi-arrow-left"></i> Back to Orders
+        </a>
+        <h1 class="page-title">Share Your Literary Journey</h1>
+        <p class="page-subtitle">Your thoughts help other readers discover their next favorite book</p>
+        
+        <!-- Modified: Added img tag for book cover with fallback to icon -->
+        <div class="book-preview">
+          <div class="book-cover">
+            <img id="bookCover" src="https://via.placeholder.com/60x80" alt="Book Cover" style="display: none;">
+            <i id="bookCoverIcon" class="bi bi-book"></i>
+          </div>
+          <div class="book-info">
+            <h3 id="bookTitle">Book Title</h3>
+            <p>Order #<span id="orderNumber">12345</span></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="review-body">
+        <form id="reviewForm">
+          <div class="form-group">
+            <label class="form-label">Your Rating</label>
+            <div class="star-rating">
+              <input type="radio" id="star5" name="rating" value="5" required />
+              <label for="star5" title="5 stars"><i class="bi bi-star-fill"></i></label>
+              
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4" title="4 stars"><i class="bi bi-star-fill"></i></label>
+              
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3" title="3 stars"><i class="bi bi-star-fill"></i></label>
+              
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2" title="2 stars"><i class="bi bi-star-fill"></i></label>
+              
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label for="star1" title="1 star"><i class="bi bi-star-fill"></i></label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="reviewText" class="form-label">Your Review</label>
+            <textarea 
+              class="form-control" 
+              id="reviewText" 
+              rows="4" 
+              required 
+              placeholder="Share your experience with this book. What did you enjoy? Would you recommend it to others?"
+              maxlength="500"
+            ></textarea>
+            <span class="character-count"><span id="charCount">0</span>/500 characters</span>
+          </div>
+          
+          <div class="review-tips">
+            <h4><i class="bi bi-lightbulb"></i> Tips for a Helpful Review</h4>
+            <ul>
+              <li>Mention what you liked or disliked about the book</li>
+              <li>Discuss the writing style, characters, or plot</li>
+              <li>Avoid spoilers that might ruin the experience for others</li>
+              <li>Consider who might enjoy this book</li>
+            </ul>
+          </div>
+          
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='orders.html'">
+              <i class="bi bi-x-circle"></i> Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-send"></i> Submit Review
+            </button>
+          </div>
+        </form>
+        
+        <div id="message" class="alert d-none"></div>
+      </div>
+      
+      <div class="review-footer">
+        <p>Thank you for sharing your thoughts with the Kitab Sansar community!</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner">
+      <div class="book-loading"></div>
+    </div>
+  </div>
+  
+  <div class="success-animation" id="successAnimation">
+    <div class="checkmark-circle">
+      <div class="background"></div>
+      <div class="checkmark draw"></div>
+    </div>
+    <h2 class="success-message">Review Submitted!</h2>
+    <p class="success-submessage">Thank you for sharing your thoughts</p>
+  </div>
+
+  <script>
+    // Modified: Get URL parameters and initialize variables
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderId = parseInt(urlParams.get('orderId'), 10);
+    const bookId = parseInt(urlParams.get('bookId'), 10);
+    let reviewBookId = bookId; // Store bookId for review submission
+
+    // Modified: Update order number in the UI
+    document.getElementById('orderNumber').textContent = orderId || '12345';
+
+    // Modified: Fetch book details using orderId if bookId is not provided
+    function fetchBookDetails() {
+      const token = localStorage.getItem('token');
+      const headers = token ? { 'Authorization': 'Bearer ' + token } : {};
+
+      // Try fetching book details if bookId is provided
+      if (bookId) {
+        fetch(`/api/books/${bookId}`, { headers })
+          .then(res => res.ok ? res.json() : null)
+          .then(book => {
+            if (book && book.title) {
+              document.getElementById('bookTitle').textContent = book.title;
+              // Modified: Update book cover if CoverImageUrl is available
+              if (book.CoverImageUrl) {
+                const bookCover = document.getElementById('bookCover');
+                bookCover.src = book.CoverImageUrl;
+                bookCover.style.display = 'block';
+                document.getElementById('bookCoverIcon').style.display = 'none';
+              }
+              reviewBookId = bookId;
+            } else {
+              fetchOrderDetails(); // Fallback to order details
+            }
+          })
+          .catch(err => {
+            console.error('Error fetching book details:', err);
+            fetchOrderDetails(); // Fallback to order details
+          });
+      } else {
+        fetchOrderDetails();
+      }
+    }
+
+    // Modified: Fetch order details to get book title, CoverImageUrl, and bookId
+    function fetchOrderDetails() {
+      const token = localStorage.getItem('token');
+      fetch(`/api/order/${orderId}`, {
+        headers: token ? { 'Authorization': 'Bearer ' + token } : {}
+      })
+        .then(res => res.ok ? res.json() : null)
+        .then(order => {
+          if (order && order.items && order.items.length > 0) {
+            const firstItem = order.items[0];
+            document.getElementById('bookTitle').textContent = firstItem.title || 'Unknown Book';
+            // Modified: Update book cover if CoverImageUrl is available
+            if (firstItem.CoverImageUrl) {
+              const bookCover = document.getElementById('bookCover');
+              bookCover.src = firstItem.CoverImageUrl || 'https://via.placeholder.com/60x80';
+              bookCover.style.display = 'block';
+              document.getElementById('bookCoverIcon').style.display = 'none';
+            }
+            reviewBookId = firstItem.bookId || firstItem.id || null; // Set bookId for review submission
+          } else {
+            showMessage('Unable to load book details for this order.', 'danger');
+            document.getElementById('bookTitle').textContent = 'Unknown Book';
+          }
+        })
+        .catch(err => {
+          console.error('Error fetching order details:', err);
+          showMessage('Error loading book details: ' + err.message, 'danger');
+          document.getElementById('bookTitle').textContent = 'Unknown Book';
+        });
+    }
+
+    // Character counter for review text
+    const reviewText = document.getElementById('reviewText');
+    const charCount = document.getElementById('charCount');
+
+    reviewText.addEventListener('input', function() {
+      const count = this.value.length;
+      charCount.textContent = count;
+      
+      if (count > 400) {
+        charCount.style.color = '#FF9800';
+      } else if (count > 450) {
+        charCount.style.color = '#F44336';
+      } else {
+        charCount.style.color = '';
+      }
+    });
+
+    // Modified: Form submission with reviewBookId
+    document.getElementById('reviewForm').onsubmit = function (event) {
+      event.preventDefault();
+      
+      // Get selected rating
+      const ratingInputs = document.querySelectorAll('input[name="rating"]');
+      let rating = null;
+      for (const input of ratingInputs) {
+        if (input.checked) {
+          rating = parseInt(input.value, 10);
+          break;
+        }
+      }
+      
+      if (!rating) {
+        showMessage("Please select a rating.", 'danger');
+        return;
+      }
+      
+      const reviewText = document.getElementById('reviewText').value;
+      const token = localStorage.getItem('token');
+
+      if (!token) {
+        showMessage('You must be logged in to submit a review.', 'danger');
+        return;
+      }
+      
+      // Modified: Ensure reviewBookId is available for submission
+      if (!reviewBookId) {
+        showMessage('Cannot submit review: Book ID is missing.', 'danger');
+        return;
+      }
+
+      // Show loading overlay
+      document.getElementById('loadingOverlay').classList.add('active');
+
+      fetch('/api/review', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify({
+          bookId: reviewBookId,
+          orderId,
+          rating,
+          comment: reviewText
+        })
+      })
+      .then(async res => {
+        let data;
+        try {
+          data = await res.json();
+        } catch (e) {
+          // If response is not JSON, get text instead
+          const text = await res.text();
+          throw new Error(text || 'Unknown server error');
+        }
+        return { ok: res.ok, data };
+      })
+      .then(({ ok, data }) => {
+        document.getElementById('loadingOverlay').classList.remove('active');
+        
+        if (!ok) {
+          showMessage(data.message || 'Review submission failed', 'danger');
+        } else {
+          document.getElementById('successAnimation').classList.add('active');
+          setTimeout(() => window.location.href = 'orders.html', 2000);
+        }
+      })
+      .catch(err => {
+        document.getElementById('loadingOverlay').classList.remove('active');
+        showMessage(err.message, 'danger');
+      });
+    };
+
+    // Modified: Display error messages
+    function showMessage(msg, type) {
+      const messageDiv = document.getElementById('message');
+      messageDiv.innerHTML = `<i class="bi ${type === 'success' ? 'bi-check-circle' : 'bi-exclamation-triangle'}"></i> ${msg}`;
+      messageDiv.className = `alert alert-${type}`;
+      messageDiv.classList.remove('d-none');
+      
+      messageDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Modified: Initialize book details fetch
+    fetchBookDetails();
+  </script>
+</body>
+</html>

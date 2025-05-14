@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitab Sansar - Book Reviews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --bg: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --error: #ef4444;
+            --radius: 0.5rem;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: var(--radius);
+            font-weight: 700;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        
+        .back-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        .page-header {
+            margin-bottom: 2rem;
+        }
+        
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-description {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+        
+        .card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .card-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .reviews-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .reviews-table th {
+            background-color: var(--bg);
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-align: left;
+            padding: 0.75rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .reviews-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.875rem;
+            vertical-align: middle;
+        }
+        
+        .reviews-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .reviews-table tr:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+        
+        .user-name {
+            font-weight: 500;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .user-avatar {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 0.75rem;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+        }
+        
+        .stars {
+            color: var(--secondary);
+            letter-spacing: 0.1em;
+            font-size: 0.875rem;
+        }
+        
+        .comment {
+            max-width: 20rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .date {
+            color: var(--text-light);
+            font-size: 0.75rem;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+        }
+        
+        .loading-container {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border: 2px solid rgba(37, 99, 235, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+        
+        .error-container {
+            padding: 2rem;
+            text-align: center;
+            background-color: rgba(239, 68, 68, 0.1);
+            border-radius: var(--radius);
+            color: var(--error);
+        }
+        
+        .error-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .error-message {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .error-details {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            .reviews-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .reviews-table th, 
+            .reviews-table td {
+                padding: 0.75rem 1rem;
+            }
+            
+            .page-title {
+                font-size: 1.25rem;
+            }
+            
+            .comment {
+                max-width: 10rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">KS</div>
+                    <span>Kitab Sansar</span>
+                </div>
+                <a href="home.html" class="back-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6"/>
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="page-header">
+            <h1 class="page-title">Customer Book Reviews</h1>
+            <p class="page-description">Browse and manage customer feedback for our books</p>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">All Reviews</h2>
+                <div class="badge" id="review-count">0 reviews</div>
+            </div>
+            
+            <div id="table-container">
+                <table class="reviews-table" id="reviewsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Book ID</th>
+                            <th>Order ID</th>
+                            <th>Rating</th>
+                            <th>Comment</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reviewsBody">
+                        <!-- Table content will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // List of names to use
+        const namesList = ["Namik", "Samir", "Dikshya", "Mausam", "Akshyata"];
+        const avatarColors = ["#2563eb", "#7c3aed", "#db2777", "#ea580c", "#16a34a"];
+        
+        // Function to get a name based on user ID
+        function getUserName(userId) {
+            // If userId is a number, use it directly
+            if (!isNaN(userId) && userId > 0 && userId <= namesList.length) {
+                return {
+                    name: namesList[userId - 1],
+                    colorIndex: userId - 1
+                };
+            }
+            
+            // If userId is a string (like a GUID), use a simple hash function
+            let hash = 0;
+            
+            // If it's a string, use the first 11 characters to determine the name
+            if (typeof userId === 'string') {
+                const firstElevenChars = userId.substring(0, 11);
+                
+                for (let i = 0; i < firstElevenChars.length; i++) {
+                    hash += firstElevenChars.charCodeAt(i);
+                }
+            } else {
+                // If it's not a string or number, use a default
+                hash = Date.now();
+            }
+            
+            // Get index between 0 and 4 (for our 5 names)
+            const nameIndex = hash % 5;
+            
+            return {
+                name: namesList[nameIndex],
+                colorIndex: nameIndex
+            };
+        }
+        
+        // Format the date to be more readable
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString(undefined, options);
+        }
+        
+        // Generate star rating HTML
+        function generateStars(rating) {
+            const fullStar = '★';
+            const emptyStar = '☆';
+            let stars = '';
+            
+            for (let i = 1; i <= 5; i++) {
+                stars += i <= rating ? fullStar : emptyStar;
+            }
+            
+            return `<div class="stars">${stars}</div>`;
+        }
+        
+        // Generate user avatar
+        function generateAvatar(name, colorIndex) {
+            const initials = name.charAt(0);
+            const color = avatarColors[colorIndex];
+            
+            return `<div class="user-avatar" style="background-color: ${color}">${initials}</div>`;
+        }
+        
+        // Show loading state
+        function showLoading() {
+            document.getElementById('table-container').innerHTML = `
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <p class="loading-text">Loading reviews...</p>
+                </div>
+            `;
+        }
+        
+        // Show error state
+        function showError(message) {
+            document.getElementById('table-container').innerHTML = `
+                <div class="error-container">
+                    <div class="error-icon">⚠️</div>
+                    <p class="error-message">Unable to load reviews</p>
+                    <p class="error-details">${message}</p>
+                </div>
+            `;
+        }
+        
+        // Initialize
+        showLoading();
+        
+        // Temporary test endpoint
+        fetch('http://localhost:5239/api/Reviews/test')
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            return response.text();
+        })
+        .then(text => {
+            console.log('Test Response:', text);
+            if(text !== "API Working!") {
+                throw new Error('API test endpoint mismatch');
+            }
+        })
+        .catch(error => {
+            console.error('Connection Test Failed:', error);
+            showError(`Connection Failed: ${error.message}`);
+        });
+
+        // Update fetch URL with absolute path and add error handling
+        fetch('http://localhost:5239/api/Reviews', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Update the review count
+            document.getElementById('review-count').textContent = `${data.length} reviews`;
+            
+            // If no reviews, show empty state
+            if (data.length === 0) {
+                document.getElementById('table-container').innerHTML = `
+                    <div class="loading-container">
+                        <p class="loading-text">No reviews found</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Reset the table container
+            document.getElementById('table-container').innerHTML = `
+                <table class="reviews-table" id="reviewsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Book ID</th>
+                            <th>Order ID</th>
+                            <th>Rating</th>
+                            <th>Comment</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reviewsBody">
+                    </tbody>
+                </table>
+            `;
+            
+            const tbody = document.getElementById('reviewsBody');
+            
+            data.forEach(review => {
+                const user = getUserName(review.userId);
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td>${review.id}</td>
+                    <td>
+                        <div class="user-name">
+                            ${generateAvatar(user.name, user.colorIndex)}
+                            ${user.name}
+                        </div>
+                    </td>
+                    <td>${review.bookId}</td>
+                    <td>${review.orderId}</td>
+                    <td>${generateStars(review.rating)}</td>
+                    <td class="comment">${review.comment}</td>
+                    <td class="date">${formatDate(review.reviewDate)}</td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Fetch Error:', error);
+            showError(error.message);
+        });
+    </script>
+</body>
+</html>

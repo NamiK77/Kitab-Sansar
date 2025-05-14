@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - Kitab Sansar</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Admin CSS -->
+    <link href="css/admin.css" rel="stylesheet">
+    <style>
+        body {
+            background: #fff9db; /* Soft yellow background */
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .sidebar {
+            min-width: 220px;
+            max-width: 220px;
+            background: #fffbe7; /* Lighter yellow for sidebar */
+            color: #444;
+            min-height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            border-right: 2px solid #ffd803;
+        }
+        .sidebar .nav-link {
+            color: #444;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 8px;
+            margin: 0 8px 6px 8px;
+        }
+        .sidebar .nav-link.active, .sidebar .nav-link:hover {
+            background: #ffd803; /* Yellow accent */
+            color: #fff;
+        }
+        .sidebar .sidebar-header {
+            padding: 1.5rem 1rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: #fffbe7;
+            border-bottom: 2px solid #ffd803;
+            color: #ffd803;
+            letter-spacing: 1px;
+        }
+        .sidebar .bi {
+            color: #ffd803;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 2rem 2rem 2rem 2rem;
+            background: #fff9db;
+            min-height: 100vh;
+        }
+        /* Card style */
+        .card {
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(255, 216, 3, 0.08);
+            background: #fff;
+            border: 1.5px solid #ffd803;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(255, 216, 3, 0.15);
+        }
+        
+        .profile-img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffd803;
+        }
+        
+        /* Chart container styles */
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 300px;
+            width: 100%;
+        }
+        
+        .chart-card {
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .chart-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+        
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+        
+        .stats-card {
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .stats-icon {
+            font-size: 2.5rem;
+            color: #ffd803;
+            margin-bottom: 1rem;
+        }
+        
+        .stats-title {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .stats-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #444;
+        }
+        
+        .stats-trend {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        
+        .trend-up {
+            color: #10b981;
+        }
+        
+        .trend-down {
+            color: #ef4444;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 0.5rem 1rem;
+            background: #fff;
+            border: 1.5px solid #ffd803;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .tab-button.active {
+            background: #ffd803;
+            color: #fff;
+        }
+        
+        .tab-button:hover:not(.active) {
+            background: #fffbe7;
+        }
+        
+        /* Quick stats */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .quick-stat-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            border: 1.5px solid #ffd803;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(255, 216, 3, 0.15);
+        }
+        
+        .quick-stat-icon {
+            font-size: 1.5rem;
+            color: #ffd803;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quick-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #444;
+            margin-bottom: 0.25rem;
+        }
+        
+        .quick-stat-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .sidebar {
+                min-width: 60px;
+                max-width: 60px;
+            }
+            .sidebar .sidebar-header,
+            .sidebar .nav-link span {
+                display: none;
+            }
+            .content {
+                margin-left: 60px;
+            }
+            .quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .content {
+                padding: 1rem 0.5rem;
+            }
+            .tab-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation Menu Start -->
+    <div class="sidebar d-flex flex-column">
+        <div class="sidebar-header text-center">
+            <i class="bi bi-bar-chart-fill me-2"></i>
+            <span>Kitab Sansar</span>
+        </div>
+        <nav class="nav flex-column mt-3">
+            <a class="nav-link active" href="dashboard.html"><i class="bi bi-speedometer2 me-2"></i><span>Dashboard</span></a>
+            <a class="nav-link" href="books.html"><i class="bi bi-book me-2"></i><span>Books</span></a>
+            <a class="nav-link" href="discounts.html"><i class="bi bi-percent me-2"></i><span>Discounts</span></a>
+            <a class="nav-link" href="announcements.html"><i class="bi bi-megaphone me-2"></i><span>Announcements</span></a>
+            
+            <a class="nav-link" href="users.html"><i class="bi bi-people me-2"></i><span>Users</span></a>
+            <a class="nav-link text-danger" href="#" onclick="logout()" style="margin-top:0 rem;">
+                <i class="bi bi-box-arrow-right me-2"></i><span>Logout</span>
+            </a>
+            
+        </nav>
+    </div>
+    <!-- Sidebar Navigation Menu End -->
+
+    <div class="content">
+        <!-- Page Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="mb-1"><i class="bi bi-speedometer2 me-2" style="color: #ffd803;"></i>Dashboard Overview</h4>
+                <p class="text-muted mb-0">Welcome to your bookstore management dashboard</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle d-flex align-items-center" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPTaeBMpqYprRNKkEX9EQKnpzBlohdEbP_Og&s" alt="Profile" class="profile-img me-2">
+                        <span>Admin</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+            <div class="quick-stat-card">
+                <div class="quick-stat-icon"><i class="bi bi-book"></i></div>
+                <div class="quick-stat-value" id="total-books">0</div>
+                <div class="quick-stat-label">Total Books</div>
+            </div>
+            <div class="quick-stat-card">
+                <div class="quick-stat-icon"><i class="bi bi-box-seam"></i></div>
+                <div class="quick-stat-value" id="total-stock">0</div>
+                <div class="quick-stat-label">Total Stock</div>
+            </div>
+            <div class="quick-stat-card">
+                <div class="quick-stat-icon"><i class="bi bi-currency-dollar"></i></div>
+                <div class="quick-stat-value" id="total-investment">$0</div>
+                <div class="quick-stat-label">Total Investment</div>
+            </div>
+            <div class="quick-stat-card">
+                <div class="quick-stat-icon"><i class="bi bi-tag"></i></div>
+                <div class="quick-stat-value" id="total-on-sale">0</div>
+                <div class="quick-stat-label">Books On Sale</div>
+            </div>
+            <div class="quick-stat-card">
+                <div class="quick-stat-icon"><i class="bi bi-cart"></i></div>
+                <div class="quick-stat-value" id="total-sales">$0</div>
+                <div class="quick-stat-label">Total Sales</div>
+            </div>
+        </div>
+        
+        <!-- Analytics Cards: Books Related -->
+        <div class="row mb-4" id="admin-analytics-row">
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card">
+                    <div class="stats-icon"><i class="bi bi-book"></i></div>
+                    <h6 class="stats-title">Total Books</h6>
+                    <div class="stats-value" id="detailed-total-books">0</div>
+                    <div class="stats-trend trend-up">
+                        <i class="bi bi-arrow-up"></i>
+                        <span>12% from last month</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card">
+                    <div class="stats-icon"><i class="bi bi-box-seam"></i></div>
+                    <h6 class="stats-title">Total Stock</h6>
+                    <div class="stats-value" id="detailed-total-stock">0</div>
+                    <div class="stats-trend trend-up">
+                        <i class="bi bi-arrow-up"></i>
+                        <span>8% from last month</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card">
+                    <div class="stats-icon"><i class="bi bi-currency-dollar"></i></div>
+                    <h6 class="stats-title">Total Investment</h6>
+                    <div class="stats-value" id="detailed-total-investment">$0.00</div>
+                    <div class="stats-trend trend-up">
+                        <i class="bi bi-arrow-up"></i>
+                        <span>15% from last month</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card">
+                    <div class="stats-icon"><i class="bi bi-tag"></i></div>
+                    <h6 class="stats-title">Total On Sale Books</h6>
+                    <div class="stats-value" id="detailed-total-on-sale">0</div>
+                    <div class="stats-trend trend-down">
+                        <i class="bi bi-arrow-down"></i>
+                        <span>3% from last month</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chart Tabs -->
+        <div class="tab-buttons">
+            <button class="tab-button active" data-chart="sales">Sales Overview</button>
+            <button class="tab-button" data-chart="inventory">Inventory Analysis</button>
+            <button class="tab-button" data-chart="categories">Category Distribution</button>
+            <button class="tab-button" data-chart="revenue">Revenue Trends</button>
+        </div>
+        
+        <!-- Charts Section -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card chart-card">
+                    <div class="chart-title" id="current-chart-title">Sales Overview</div>
+                    <div class="chart-container">
+                        <canvas id="mainChart"></canvas>
+                    </div>
+                    <div class="chart-legend" id="chart-legend">
+                        <!-- Legend items will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Chart.js configuration
+        Chart.defaults.font.family = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+        Chart.defaults.color = '#444';
+        Chart.defaults.scale.grid.color = 'rgba(255, 216, 3, 0.1)';
+        Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(255, 216, 3, 0.8)';
+        Chart.defaults.plugins.tooltip.titleColor = '#fff';
+        Chart.defaults.plugins.tooltip.bodyColor = '#fff';
+        Chart.defaults.plugins.tooltip.borderColor = '#ffd803';
+        Chart.defaults.plugins.tooltip.borderWidth = 1;
+        Chart.defaults.plugins.tooltip.padding = 10;
+        Chart.defaults.plugins.tooltip.cornerRadius = 8;
+        
+        // Chart instance
+        let mainChart;
+        
+        // Chart data
+        const chartData = {
+            sales: {
+                title: 'Sales Overview',
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [
+                    {
+                        label: 'Revenue',
+                        data: [1200, 1900, 1500, 2500, 2200, 3000],
+                        backgroundColor: 'rgba(255, 216, 3, 0.7)',
+                        borderColor: '#ffd803',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Books Sold',
+                        data: [50, 75, 60, 95, 85, 110],
+                        backgroundColor: 'rgba(255, 159, 64, 0.7)',
+                        borderColor: '#ff9f40',
+                        borderWidth: 2
+                    }
+                ],
+                legend: [
+                    { label: 'Revenue', color: '#ffd803' },
+                    { label: 'Books Sold', color: '#ff9f40' }
+                ]
+            },
+            inventory: {
+                title: 'Inventory Analysis',
+                labels: ['Fiction', 'Non-Fiction', 'Children', 'Academic', 'Self-Help', 'Biography'],
+                datasets: [
+                    {
+                        label: 'Stock Level',
+                        data: [120, 90, 150, 80, 60, 40],
+                        backgroundColor: 'rgba(255, 216, 3, 0.7)',
+                        borderColor: '#ffd803',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Reorder Level',
+                        data: [30, 25, 40, 20, 15, 10],
+                        backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                        borderColor: '#ff6384',
+                        borderWidth: 2
+                    }
+                ],
+                legend: [
+                    { label: 'Stock Level', color: '#ffd803' },
+                    { label: 'Reorder Level', color: '#ff6384' }
+                ]
+            },
+            categories: {
+                title: 'Category Distribution',
+                labels: ['Fiction', 'Non-Fiction', 'Children', 'Academic', 'Self-Help', 'Biography'],
+                datasets: [
+                    {
+                        label: 'Books by Category',
+                        data: [35, 25, 15, 10, 8, 7],
+                        backgroundColor: [
+                            'rgba(255, 216, 3, 0.7)',
+                            'rgba(255, 159, 64, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(153, 102, 255, 0.7)',
+                            'rgba(255, 99, 132, 0.7)'
+                        ],
+                        borderColor: [
+                            '#ffd803',
+                            '#ff9f40',
+                            '#4bc0c0',
+                            '#36a2eb',
+                            '#9966ff',
+                            '#ff6384'
+                        ],
+                        borderWidth: 1
+                    }
+                ],
+                legend: [
+                    { label: 'Fiction', color: '#ffd803' },
+                    { label: 'Non-Fiction', color: '#ff9f40' },
+                    { label: 'Children', color: '#4bc0c0' },
+                    { label: 'Academic', color: '#36a2eb' },
+                    { label: 'Self-Help', color: '#9966ff' },
+                    { label: 'Biography', color: '#ff6384' }
+                ]
+            },
+            revenue: {
+                title: 'Revenue Trends',
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [
+                    {
+                        label: 'This Year',
+                        data: [1200, 1900, 1500, 2500, 2200, 3000],
+                        backgroundColor: 'rgba(255, 216, 3, 0.7)',
+                        borderColor: '#ffd803',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4,
+                        type: 'line'
+                    },
+                    {
+                        label: 'Last Year',
+                        data: [1000, 1500, 1300, 2000, 1800, 2500],
+                        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                        borderColor: '#4bc0c0',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4,
+                        type: 'line'
+                    }
+                ],
+                legend: [
+                    { label: 'This Year', color: '#ffd803' },
+                    { label: 'Last Year', color: '#4bc0c0' }
+                ]
+            }
+        };
+        
+        // Function to update chart
+        function updateChart(chartType) {
+            const data = chartData[chartType];
+            
+            // Update chart title
+            document.getElementById('current-chart-title').textContent = data.title;
+            
+            // Update legend
+            const legendContainer = document.getElementById('chart-legend');
+            legendContainer.innerHTML = '';
+            
+            data.legend.forEach(item => {
+                const legendItem = document.createElement('div');
+                legendItem.className = 'legend-item';
+                
+                const colorBox = document.createElement('div');
+                colorBox.className = 'legend-color';
+                colorBox.style.backgroundColor = item.color;
+                
+                const label = document.createElement('span');
+                label.textContent = item.label;
+                
+                legendItem.appendChild(colorBox);
+                legendItem.appendChild(label);
+                legendContainer.appendChild(legendItem);
+            });
+            
+            // Destroy existing chart if it exists
+            if (mainChart) {
+                mainChart.destroy();
+            }
+            
+            // Create new chart
+            const ctx = document.getElementById('mainChart').getContext('2d');
+            
+            // Special configuration for pie chart
+            let chartConfig = {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: data.datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            
+            // Special configuration for pie chart
+            if (chartType === 'categories') {
+                chartConfig = {
+                    type: 'pie',
+                    data: {
+                        labels: data.labels,
+                        datasets: data.datasets
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                };
+            }
+            
+            // Special configuration for line chart
+            if (chartType === 'revenue') {
+                chartConfig = {
+                    type: 'line',
+                    data: {
+                        labels: data.labels,
+                        datasets: data.datasets
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+            
+            mainChart = new Chart(ctx, chartConfig);
+        }
+        
+        // Tab button click handler
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Update chart
+                updateChart(this.dataset.chart);
+            });
+        });
+        
+        // Fetch and display books analytics data for admin dashboard
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                // Fetch all books
+                const booksRes = await fetch('/api/book');
+                const books = await booksRes.json();
+
+                // Total Books
+                document.getElementById('total-books').textContent = books.length;
+                document.getElementById('detailed-total-books').textContent = books.length;
+
+                // Total Stock
+                let totalStock = 0;
+                // Total Investment (sum of price * stock)
+                let totalInvestment = 0;
+                // Total On Sale Books
+                let totalOnSale = 0;
+
+                books.forEach(book => {
+                    const stock = Number(book.stock) || 0;
+                    const price = Number(book.price) || 0;
+                    totalStock += stock;
+                    totalInvestment += price * stock;
+                    if (book.isOnSale === true || book.isOnSale === "true") {
+                        totalOnSale++;
+                    }
+                });
+
+                document.getElementById('total-stock').textContent = totalStock;
+                document.getElementById('detailed-total-stock').textContent = totalStock;
+                
+                document.getElementById('total-investment').textContent = `$${Math.round(totalInvestment)}`;
+                document.getElementById('detailed-total-investment').textContent = `$${totalInvestment.toFixed(2)}`;
+                
+                document.getElementById('total-on-sale').textContent = totalOnSale;
+                document.getElementById('detailed-total-on-sale').textContent = totalOnSale;
+                
+                // Simulate total sales
+                const totalSales = Math.round(totalInvestment * 0.4); // 40% of investment as sales for demo
+                document.getElementById('total-sales').textContent = `$${totalSales}`;
+                
+                // Initialize the default chart
+                updateChart('sales');
+                
+            } catch (err) {
+                console.error('Failed to load analytics:', err);
+                
+                // Set default values if API fails
+                document.getElementById('total-books').textContent = '150';
+                document.getElementById('detailed-total-books').textContent = '150';
+                document.getElementById('total-stock').textContent = '540';
+                document.getElementById('detailed-total-stock').textContent = '540';
+                document.getElementById('total-investment').textContent = '$8,250';
+                document.getElementById('detailed-total-investment').textContent = '$8,250.00';
+                document.getElementById('total-on-sale').textContent = '25';
+                document.getElementById('detailed-total-on-sale').textContent = '25';
+                document.getElementById('total-sales').textContent = '$3,300';
+                
+                // Initialize the default chart even if data fetch fails
+                updateChart('sales');
+            }
+        });
+    </script>
+</body>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discounted Books - Kitab Sansar</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background: #fff9db; /* Soft yellow background */
+            min-height: 100vh;
+        }
+        .sidebar {
+            min-width: 220px;
+            max-width: 220px;
+            background: #fffbe7; /* Lighter yellow for sidebar */
+            color: #444;
+            min-height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            border-right: 2px solid #ffd803;
+        }
+        .sidebar .nav-link {
+            color: #444;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 8px;
+            margin: 0 8px 6px 8px;
+        }
+        .sidebar .nav-link.active, .sidebar .nav-link:hover {
+            background: #ffd803; /* Yellow accent */
+            color: #fff;
+        }
+        .sidebar .sidebar-header {
+            padding: 1.5rem 1rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: #fffbe7;
+            border-bottom: 2px solid #ffd803;
+            color: #ffd803;
+            letter-spacing: 1px;
+        }
+        .sidebar .bi {
+            color: #ffd803;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 2rem 2rem 2rem 2rem;
+            background: #fff9db;
+            min-height: 100vh;
+        }
+        
+        /* Page header */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #ffd803;
+        }
+        
+        .page-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .page-title i {
+            color: #ffd803;
+        }
+        
+        /* Book card styles */
+        .book-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(255, 216, 3, 0.1);
+            border: 1.5px solid #ffd803;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(255, 216, 3, 0.2);
+        }
+        
+        .book-image {
+            height: 200px;
+            overflow: hidden;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            position: relative;
+        }
+        
+        .book-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffd803;
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        
+        .book-details {
+            padding: 1.25rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .book-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #444;
+            line-height: 1.3;
+        }
+        
+        .book-author {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.75rem;
+        }
+        
+        .book-meta {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .book-meta i {
+            color: #ffd803;
+            font-size: 0.9rem;
+        }
+        
+        .book-price {
+            margin-top: auto;
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .discount-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #28a745;
+        }
+        
+        .book-footer {
+            padding: 1rem 1.25rem;
+            border-top: 1px solid rgba(255, 216, 3, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 251, 231, 0.5);
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+        
+        .book-stock {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .book-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .book-rating i {
+            color: #ffd803;
+        }
+        
+        .book-rating span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        /* Filter controls */
+        .filter-controls {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border: 1.5px solid #ffd803;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        .filter-select {
+            padding: 0.375rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #444;
+            font-size: 0.9rem;
+        }
+        
+        .search-box {
+            flex-grow: 1;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.375rem 0.75rem 0.375rem 2.25rem;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        
+        /* Loading and empty states */
+        .loading-container, .empty-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 3rem 1rem;
+            text-align: center;
+            border: 1.5px solid #ffd803;
+        }
+        
+        .loading-spinner {
+            width: 3rem;
+            height: 3rem;
+            border: 4px solid rgba(255, 216, 3, 0.1);
+            border-left-color: #ffd803;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .sidebar {
+                min-width: 60px;
+                max-width: 60px;
+            }
+            .sidebar .sidebar-header,
+            .sidebar .nav-link span {
+                display: none;
+            }
+            .content {
+                margin-left: 60px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .content {
+                padding: 1rem 0.5rem;
+            }
+            .filter-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-box {
+                width: 100%;
+            }
+        }
+        
+        /* Book details modal */
+        .modal-content {
+            border-radius: 12px;
+            border: 2px solid #ffd803;
+        }
+        
+        .modal-header {
+            background: #fffbe7;
+            border-bottom: 2px solid #ffd803;
+        }
+        
+        .modal-title {
+            color: #444;
+            font-weight: 600;
+        }
+        
+        .modal-footer {
+            background: #fffbe7;
+            border-top: 2px solid #ffd803;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Navigation Menu Start -->
+    <div class="sidebar d-flex flex-column">
+        <div class="sidebar-header text-center">
+            <i class="bi bi-bar-chart-fill me-2"></i>
+            <span>Kitab Sansar</span>
+        </div>
+        <nav class="nav flex-column mt-3">
+            <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2 me-2"></i><span>Dashboard</span></a>
+            <a class="nav-link" href="books.html"><i class="bi bi-book me-2"></i><span>Books</span></a>
+            <a class="nav-link active" href="discounts.html"><i class="bi bi-percent me-2"></i><span>Discounts</span></a>
+            <a class="nav-link" href="announcements.html"><i class="bi bi-megaphone me-2"></i><span>Announcements</span></a>
+           
+            <a class="nav-link" href="users.html"><i class="bi bi-people me-2"></i><span>Users</span></a>
+            <a class="nav-link text-danger" href="#" onclick="logout()" style="margin-top:0 rem;">
+                <i class="bi bi-box-arrow-right me-2"></i><span>Logout</span>
+            </a>
+        </nav>
+    </div>
+    <!-- Sidebar Navigation Menu End -->
+
+    <div class="content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">
+                <i class="bi bi-percent"></i> Discounted Books
+            </h1>
+            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addDiscountModal">
+                <i class="bi bi-plus-circle"></i> Add New Discount
+            </button>
+        </div>
+        
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+            <div class="filter-group">
+                <span class="filter-label">Sort by:</span>
+                <select class="filter-select" id="sortSelect">
+                    <option value="discount">Highest Discount</option>
+                    <option value="price">Lowest Price</option>
+                    <option value="title">Title (A-Z)</option>
+                    <option value="date">End Date (Soonest)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Genre:</span>
+                <select class="filter-select" id="genreSelect">
+                    <option value="all">All Genres</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-Fiction</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="sci-fi">Science Fiction</option>
+                </select>
+            </div>
+            <div class="search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" id="searchInput" placeholder="Search discounted books...">
+            </div>
+        </div>
+        
+        <!-- Books Grid -->
+        <div class="row g-4" id="discountedBooksGrid">
+            <div class="col-12">
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <p>Loading discounted books...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Book Details Modal -->
+    <div class="modal fade" id="bookDetailsModal" tabindex="-1" aria-labelledby="bookDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookDetailsModalLabel">Book Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="bookDetailsContent">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning">Edit Discount</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Discount Modal -->
+    <div class="modal fade" id="addDiscountModal" tabindex="-1" aria-labelledby="addDiscountModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addDiscountModalLabel">Add New Discount</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addDiscountForm">
+                        <div class="mb-3">
+                            <label for="bookSelect" class="form-label">Select Book</label>
+                            <select class="form-select" id="bookSelect" required>
+                                <option value="">Choose a book...</option>
+                                <!-- Options will be populated dynamically -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="discountPrice" class="form-label">Discount Price</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" id="discountPrice" step="0.01" min="0" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="discountStart" class="form-label">Start Date</label>
+                                <input type="date" class="form-control" id="discountStart" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="discountEnd" class="form-label">End Date</label>
+                                <input type="date" class="form-control" id="discountEnd" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-warning" id="saveDiscountBtn">Save Discount</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                // Fetch all books
+                const res = await fetch('/api/book');
+                const books = await res.json();
+                
+                // Filter discounted books
+                const discounted = books.filter(book => book.isOnSale === true || book.isOnSale === "true");
+                
+                // Get the grid container
+                const booksGrid = document.getElementById('discountedBooksGrid');
+                
+                // Clear loading indicator
+                booksGrid.innerHTML = '';
+                
+                // Check if there are any discounted books
+                if (discounted.length === 0) {
+                    booksGrid.innerHTML = `
+                        <div class="col-12">
+                            <div class="empty-container">
+                                <i class="bi bi-emoji-frown" style="font-size: 3rem; color: #ffd803; margin-bottom: 1rem;"></i>
+                                <h4>No Discounted Books Found</h4>
+                                <p class="text-muted">There are currently no books on sale. Add discounts to see them here.</p>
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Populate the grid with book cards
+                discounted.forEach(book => {
+                    // Calculate discount percentage
+                    const originalPrice = Number(book.price) || 0;
+                    const discountPrice = Number(book.discountPrice) || 0;
+                    let discountPercentage = 0;
+                    
+                    if (originalPrice > 0 && discountPrice > 0) {
+                        discountPercentage = Math.round((originalPrice - discountPrice) / originalPrice * 100);
+                    }
+                    
+                    // Create a card for each book
+                    const bookCard = document.createElement('div');
+                    bookCard.className = 'col-md-6 col-lg-4 col-xl-3';
+                    bookCard.innerHTML = `
+                        <div class="book-card">
+                            <div class="book-image">
+                                <img src="${book.imageUrl || 'https://via.placeholder.com/300x200?text=No+Image'}" alt="${book.title}">
+                                <div class="discount-badge">${discountPercentage}% OFF</div>
+                            </div>
+                            <div class="book-details">
+                                <h3 class="book-title">${book.title}</h3>
+                                <p class="book-author">by ${book.author}</p>
+                                <div class="book-meta">
+                                    <i class="bi bi-tag-fill"></i>
+                                    <span>${book.genre || 'General'}</span>
+                                </div>
+                                <div class="book-meta">
+                                    <i class="bi bi-calendar-event"></i>
+                                    <span>Sale ends: ${book.discountEnd ? new Date(book.discountEnd).toLocaleDateString() : 'N/A'}</span>
+                                </div>
+                                <div class="book-price">
+                                    <span class="original-price">$${originalPrice.toFixed(2)}</span>
+                                    <span class="discount-price">$${discountPrice.toFixed(2)}</span>
+                                </div>
+                            </div>
+                            <div class="book-footer">
+                                <div class="book-stock">
+                                    <i class="bi bi-box-seam"></i> ${book.stock} in stock
+                                </div>
+                                <div class="book-rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <span>${book.rating || 'N/A'}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Add click event to show details modal
+                    bookCard.addEventListener('click', () => showBookDetails(book));
+                    
+                    // Add the card to the grid
+                    booksGrid.appendChild(bookCard);
+                });
+                
+                // Populate the book select dropdown in the add discount modal
+                const bookSelect = document.getElementById('bookSelect');
+                const nonDiscountedBooks = books.filter(book => book.isOnSale !== true && book.isOnSale !== "true");
+                
+                nonDiscountedBooks.forEach(book => {
+                    const option = document.createElement('option');
+                    option.value = book.id;
+                    option.textContent = `${book.title} by ${book.author} - $${Number(book.price).toFixed(2)}`;
+                    bookSelect.appendChild(option);
+                });
+                
+            } catch (err) {
+                console.error('Error loading discounted books:', err);
+                document.getElementById('discountedBooksGrid').innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-danger text-center" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            Failed to load discounted books. Please try again later.
+                        </div>
+                    </div>
+                `;
+            }
+        });
+        
+        // Function to show book details in modal
+        function showBookDetails(book) {
+            const modalContent = document.getElementById('bookDetailsContent');
+            const originalPrice = Number(book.price) || 0;
+            const discountPrice = Number(book.discountPrice) || 0;
+            
+            modalContent.innerHTML = `
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <img src="${book.imageUrl || 'https://via.placeholder.com/300x400?text=No+Image'}" alt="${book.title}" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <h4>${book.title}</h4>
+                        <p class="text-muted">by ${book.author}</p>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <p><span class="detail-label">Original Price:</span> $${originalPrice.toFixed(2)}</p>
+                                <p><span class="detail-label">Discount Price:</span> <span class="text-success fw-bold">$${discountPrice.toFixed(2)}</span></p>
+                                <p><span class="detail-label">Discount Period:</span> ${book.discountStart ? new Date(book.discountStart).toLocaleDateString() : 'N/A'} to ${book.discountEnd ? new Date(book.discountEnd).toLocaleDateString() : 'N/A'}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><span class="detail-label">ISBN:</span> ${book.isbn || 'N/A'}</p>
+                                <p><span class="detail-label">Genre:</span> ${book.genre || 'N/A'}</p>
+                                <p><span class="detail-label">Format:</span> ${book.format || 'N/A'}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <span class="detail-label">Description:</span>
+                            <p>${book.description || 'No description available.'}</p>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><span class="detail-label">Publisher:</span> ${book.publisher || 'N/A'}</p>
+                                <p><span class="detail-label">Publication Date:</span> ${book.publicationDate ? new Date(book.publicationDate).toLocaleDateString() : 'N/A'}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><span class="detail-label">Language:</span> ${book.language || 'N/A'}</p>
+                                <p><span class="detail-label">Stock:</span> ${book.stock || '0'} copies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Show the modal
+            const bookDetailsModal = new bootstrap.Modal(document.getElementById('bookDetailsModal'));
+            bookDetailsModal.show();
+        }
+        
+        // Event listeners for filter controls
+        document.getElementById('searchInput').addEventListener('input', filterBooks);
+        document.getElementById('sortSelect').addEventListener('change', filterBooks);
+        document.getElementById('genreSelect').addEventListener('change', filterBooks);
+        
+        // Function to filter and sort books
+        function filterBooks() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const sortBy = document.getElementById('sortSelect').value;
+            const genreFilter = document.getElementById('genreSelect').value;
+            
+            const bookCards = document.querySelectorAll('.book-card');
+            
+            bookCards.forEach(card => {
+                const title = card.querySelector('.book-title').textContent.toLowerCase();
+                const author = card.querySelector('.book-author').textContent.toLowerCase();
+                const genre = card.querySelector('.book-meta span').textContent.toLowerCase();
+                
+                // Check if the book matches the search term
+                const matchesSearch = title.includes(searchTerm) || author.includes(searchTerm);
+                
+                // Check if the book matches the genre filter
+                const matchesGenre = genreFilter === 'all' || genre.includes(genreFilter.toLowerCase());
+                
+                // Show or hide the book based on filters
+                if (matchesSearch && matchesGenre) {
+                    card.parentElement.style.display = 'block';
+                } else {
+                    card.parentElement.style.display = 'none';
+                }
+            });
+            
+            // TODO: Implement sorting logic
+        }
+        
+        // Save discount button handler
+        document.getElementById('saveDiscountBtn').addEventListener('click', function() {
+            const form = document.getElementById('addDiscountForm');
+            if (form.checkValidity()) {
+                // In a real application, you would send this data to your API
+                alert('Discount saved successfully!');
+                const modal = bootstrap.Modal.getInstance(document.getElementById('addDiscountModal'));
+                modal.hide();
+            } else {
+                form.reportValidity();
+            }
+        });
+    </script>
+</body>
+</html>

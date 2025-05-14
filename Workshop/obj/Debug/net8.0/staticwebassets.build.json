@@ -1,0 +1,4348 @@
+{
+  "Version": 1,
+  "Hash": "qEhFL0HotzWgM2ObNXSso2IzzHmtXtecKJKyg7rlfA4=",
+  "Source": "Workshop",
+  "BasePath": "_content/Workshop",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Workshop\\wwwroot",
+      "Source": "Workshop",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2q9tce55hb",
+      "Integrity": "hhUDMG0qHaWT7s2PqANoLKT0Qd+5yQYsQxrMY+pepmg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\admin-orders.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/admin-orders#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vvs4gdzh9w",
+      "Integrity": "Oz+itnarH3B+agWRDa64hhLgJGBjcFADkOe3TPeLugQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\admin-orders.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\announcements.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/announcements#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "okd603pssc",
+      "Integrity": "yPnXxVXTfczYYJUWffxtL3iD0aMhLNaLdbzBmJFEUpc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\announcements.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\books.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/books#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c2pv266tzz",
+      "Integrity": "XLXvU6t8N7DX5NW7PXEoxDq59m/5Rrs2eS+nbOJ7+xU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\books.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\broadcasts.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/broadcasts#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t1z5852x0c",
+      "Integrity": "sdzKHQZUWWQ6dBTizO3ptUZeD7vMD/EmDi4PaA2OOEE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\broadcasts.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\claims.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/claims#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ipweew5fc",
+      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\claims.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\css\\admin.css",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/css/admin#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rgct5iduaj",
+      "Integrity": "W+H5X4ZEN6ktg8mDBnT9LzWyd5Lcv2B6Qapg7Bxv/Ws=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\css\\admin.css"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\css\\books.css",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/css/books#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cgoiqm66kz",
+      "Integrity": "tGGu3X7CmVSt5rp71XLHdBDRyPvRSHPdxNEM7oCLsL8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\css\\books.css"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\dashboard.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/dashboard#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mzel58aid1",
+      "Integrity": "IqRsTiGEyDQrIMVbWhc2XSi58axmAcuAcW02h2XIo4k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\dashboard.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\discounts.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/discounts#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wp2g5uftyo",
+      "Integrity": "PAGEfpzD0bafLkF6yR52J5w60YJJvy8WN+R7wi9FSu8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\discounts.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\inventory.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/inventory#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cey0h83mt3",
+      "Integrity": "JC+Zin6dZQon7i3It/L97J2JhUOmF9fVTL0mwafHNf4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\inventory.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\Role.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/Role#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jg9t95k6am",
+      "Integrity": "3Y0aKAs2dTDL4CEAp8h9BhJUcetBEQRWmRlYHy630iU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\Role.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\styles.css",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/styles#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cgoiqm66kz",
+      "Integrity": "tGGu3X7CmVSt5rp71XLHdBDRyPvRSHPdxNEM7oCLsL8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\users.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "admin/users#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7h0ijmm7f0",
+      "Integrity": "FQJUKgL3d9+RAENnP9XrzvO+XOn9bBc42BVZtb9rWYo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\users.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Bookdetails.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "Bookdetails#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "da6386zgiu",
+      "Integrity": "a63DgF0wbOyyHjr17Yo7tEoj9BSPF7gn3i/RzRkmQsg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Bookdetails.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\bookmarks.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "bookmarks#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kctllp7j9c",
+      "Integrity": "1PA0icohrM8lbIU8z23kLfGBMEpYxQsT9SpKmg2NKX4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bookmarks.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Cart.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "Cart#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6b4ypb0lq0",
+      "Integrity": "rrAcNzQEryi2XZ/z36kqBg7uJvYVIR5kL2hUQsTC6Jc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Cart.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Books.css",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "css/Books#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72e1292m2m",
+      "Integrity": "kVxKnDKs5lz81ibioxsREV2x0mwoJQSvNKJbJaBSk/8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Books.css"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Cart.css",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "css/Cart#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "udz4aazkgn",
+      "Integrity": "3pE58fAgHcTDT4BVpxAcHA9EXo+qkrwIws2S90DDxO4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Cart.css"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Login.css",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "css/Login#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rgwmri4xd8",
+      "Integrity": "21DDhWdA+l1ap5fuMf65qRBfuwd9DPJjIfPJ1UK9Tso=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Login.css"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Order.css",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "css/Order#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hluo9gy2et",
+      "Integrity": "G8buRczIbKLXlYLNG7ZdtWznus3mnrejPfZyacie00Y=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Order.css"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Register.css",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "css/Register#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cgw0w6pwp5",
+      "Integrity": "tNM96Gd1lFqbP+6AWeFjroJweGuVl8THCgG2WZKCL9E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Register.css"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\styles.css",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "css/styles#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hmyzu6xojc",
+      "Integrity": "9587mqshvALeg/o3etm40mLW2IRlzL6vjSCJbmA6RTM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\fetch.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "fetch#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kdpjfx7li4",
+      "Integrity": "yLUbdASkIhORXCW1t7qIvx6k8yLr2pV5n37ar9Pl0IU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fetch.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Home.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "Home#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "53zjsvoqzy",
+      "Integrity": "YbA8gjmCui5f/TKwRGVZyNIeGc7sKB9dX5en1bs3ugA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Home.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\js\\Login.js",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "js/Login#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gpvdwhrx05",
+      "Integrity": "PCoMuBVh0jeWhxjZF6LzgnzjkM/sw+Koc6QAo4yD13c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Login.js"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\js\\Register.js",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "js/Register#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "np878p0nij",
+      "Integrity": "2/NRHCH+SLoa6eYKc08GFIrcW/Gs0St4q7JQSwvA86M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Register.js"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Login.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "Login#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ghjng2pwn2",
+      "Integrity": "nFVg37tcs2KENUP20FsyUwyEffOxCPq2otUE2PlHT+c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Login.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\order.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "order#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kp8o5cijo3",
+      "Integrity": "GPfSQuQlyoNCXJG0a0To2EJaZ9Q1No4Yxgu2m2l4lCo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\order.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\OrderConfirmation.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "OrderConfirmation#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vmuj51jivi",
+      "Integrity": "KWVB+g2DG1f1MYD5Oi3D0GZliNQK6I4i4CC+h3QI9Iw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\OrderConfirmation.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\orders.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "orders#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ucklqme4hm",
+      "Integrity": "slOnzyjSFpq8ldxbqMK9NmoiTeWqdeGh+9SL1LfAaSY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\orders.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Register.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "Register#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fpfzcia7w0",
+      "Integrity": "vVF50VGH/ECNzsYbOVJTyEYr42j/6a+WnS6NdOx/pag=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Register.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\review.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "review#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "eb6m672gng",
+      "Integrity": "htRCDGAEmHSbUAkIm1qkBwp2qydmUHWpXZfUaMFbmVw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\review.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\staff.html",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "staff#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "biz49iwfhf",
+      "Integrity": "w31ueoDwWIBFdxZA9d6RsZQMyhvNW5d6oUdPqtbMAqY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\staff.html"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\009c2cd9-39fb-4d17-b64a-4af33dfdbe5b.png",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "uploads/009c2cd9-39fb-4d17-b64a-4af33dfdbe5b#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tdnwfhd8od",
+      "Integrity": "n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\009c2cd9-39fb-4d17-b64a-4af33dfdbe5b.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\2b9e68f2-1e22-4211-a7a2-83af81dec73b.png",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "uploads/2b9e68f2-1e22-4211-a7a2-83af81dec73b#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tdnwfhd8od",
+      "Integrity": "n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\2b9e68f2-1e22-4211-a7a2-83af81dec73b.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\3298fe50-91f2-46a3-b07e-f1a4153a599c.png",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "uploads/3298fe50-91f2-46a3-b07e-f1a4153a599c#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tdnwfhd8od",
+      "Integrity": "n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\3298fe50-91f2-46a3-b07e-f1a4153a599c.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\35850235-d635-4b7d-a705-fb1cdaa127dd.png",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "uploads/35850235-d635-4b7d-a705-fb1cdaa127dd#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tdnwfhd8od",
+      "Integrity": "n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\35850235-d635-4b7d-a705-fb1cdaa127dd.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\5fa52a03-5e31-4ad5-9ca6-80463841b8c9.png",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "uploads/5fa52a03-5e31-4ad5-9ca6-80463841b8c9#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tdnwfhd8od",
+      "Integrity": "n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\5fa52a03-5e31-4ad5-9ca6-80463841b8c9.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\6d45e4a3-d0cb-4426-882d-e6655c084d6d.png",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "uploads/6d45e4a3-d0cb-4426-882d-e6655c084d6d#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tdnwfhd8od",
+      "Integrity": "n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\6d45e4a3-d0cb-4426-882d-e6655c084d6d.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\77151b48-5b14-497f-9968-48f4480cdb58.png",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "uploads/77151b48-5b14-497f-9968-48f4480cdb58#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tdnwfhd8od",
+      "Integrity": "n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\77151b48-5b14-497f-9968-48f4480cdb58.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\833d0712-b935-40c9-879c-d05c903a728e.png",
+      "SourceId": "Workshop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\",
+      "BasePath": "_content/Workshop",
+      "RelativePath": "uploads/833d0712-b935-40c9-879c-d05c903a728e#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tdnwfhd8od",
+      "Integrity": "n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\833d0712-b935-40c9-879c-d05c903a728e.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "admin.2q9tce55hb.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "865"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hhUDMG0qHaWT7s2PqANoLKT0Qd+5yQYsQxrMY+pepmg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2q9tce55hb"
+        },
+        {
+          "Name": "label",
+          "Value": "admin.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hhUDMG0qHaWT7s2PqANoLKT0Qd+5yQYsQxrMY+pepmg="
+        }
+      ]
+    },
+    {
+      "Route": "admin.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "865"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hhUDMG0qHaWT7s2PqANoLKT0Qd+5yQYsQxrMY+pepmg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hhUDMG0qHaWT7s2PqANoLKT0Qd+5yQYsQxrMY+pepmg="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-orders.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\admin-orders.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6766"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Oz+itnarH3B+agWRDa64hhLgJGBjcFADkOe3TPeLugQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Oz+itnarH3B+agWRDa64hhLgJGBjcFADkOe3TPeLugQ="
+        }
+      ]
+    },
+    {
+      "Route": "admin/admin-orders.vvs4gdzh9w.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\admin-orders.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6766"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Oz+itnarH3B+agWRDa64hhLgJGBjcFADkOe3TPeLugQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vvs4gdzh9w"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/admin-orders.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Oz+itnarH3B+agWRDa64hhLgJGBjcFADkOe3TPeLugQ="
+        }
+      ]
+    },
+    {
+      "Route": "admin/announcements.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\announcements.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11806"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yPnXxVXTfczYYJUWffxtL3iD0aMhLNaLdbzBmJFEUpc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 11:16:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yPnXxVXTfczYYJUWffxtL3iD0aMhLNaLdbzBmJFEUpc="
+        }
+      ]
+    },
+    {
+      "Route": "admin/announcements.okd603pssc.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\announcements.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11806"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yPnXxVXTfczYYJUWffxtL3iD0aMhLNaLdbzBmJFEUpc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 11:16:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "okd603pssc"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/announcements.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yPnXxVXTfczYYJUWffxtL3iD0aMhLNaLdbzBmJFEUpc="
+        }
+      ]
+    },
+    {
+      "Route": "admin/books.c2pv266tzz.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\books.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25542"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XLXvU6t8N7DX5NW7PXEoxDq59m/5Rrs2eS+nbOJ7+xU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 11:10:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c2pv266tzz"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/books.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XLXvU6t8N7DX5NW7PXEoxDq59m/5Rrs2eS+nbOJ7+xU="
+        }
+      ]
+    },
+    {
+      "Route": "admin/books.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\books.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25542"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XLXvU6t8N7DX5NW7PXEoxDq59m/5Rrs2eS+nbOJ7+xU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 11:10:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XLXvU6t8N7DX5NW7PXEoxDq59m/5Rrs2eS+nbOJ7+xU="
+        }
+      ]
+    },
+    {
+      "Route": "admin/broadcasts.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\broadcasts.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "849"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sdzKHQZUWWQ6dBTizO3ptUZeD7vMD/EmDi4PaA2OOEE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sdzKHQZUWWQ6dBTizO3ptUZeD7vMD/EmDi4PaA2OOEE="
+        }
+      ]
+    },
+    {
+      "Route": "admin/broadcasts.t1z5852x0c.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\broadcasts.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "849"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sdzKHQZUWWQ6dBTizO3ptUZeD7vMD/EmDi4PaA2OOEE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t1z5852x0c"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/broadcasts.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-sdzKHQZUWWQ6dBTizO3ptUZeD7vMD/EmDi4PaA2OOEE="
+        }
+      ]
+    },
+    {
+      "Route": "admin/claims.5ipweew5fc.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\claims.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/claims.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "admin/claims.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\claims.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "admin/css/admin.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\css\\admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W+H5X4ZEN6ktg8mDBnT9LzWyd5Lcv2B6Qapg7Bxv/Ws=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-W+H5X4ZEN6ktg8mDBnT9LzWyd5Lcv2B6Qapg7Bxv/Ws="
+        }
+      ]
+    },
+    {
+      "Route": "admin/css/admin.rgct5iduaj.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\css\\admin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"W+H5X4ZEN6ktg8mDBnT9LzWyd5Lcv2B6Qapg7Bxv/Ws=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rgct5iduaj"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/css/admin.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-W+H5X4ZEN6ktg8mDBnT9LzWyd5Lcv2B6Qapg7Bxv/Ws="
+        }
+      ]
+    },
+    {
+      "Route": "admin/css/books.cgoiqm66kz.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\css\\books.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1928"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tGGu3X7CmVSt5rp71XLHdBDRyPvRSHPdxNEM7oCLsL8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cgoiqm66kz"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/css/books.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tGGu3X7CmVSt5rp71XLHdBDRyPvRSHPdxNEM7oCLsL8="
+        }
+      ]
+    },
+    {
+      "Route": "admin/css/books.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\css\\books.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1928"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tGGu3X7CmVSt5rp71XLHdBDRyPvRSHPdxNEM7oCLsL8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tGGu3X7CmVSt5rp71XLHdBDRyPvRSHPdxNEM7oCLsL8="
+        }
+      ]
+    },
+    {
+      "Route": "admin/dashboard.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\dashboard.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29288"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IqRsTiGEyDQrIMVbWhc2XSi58axmAcuAcW02h2XIo4k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 11:10:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IqRsTiGEyDQrIMVbWhc2XSi58axmAcuAcW02h2XIo4k="
+        }
+      ]
+    },
+    {
+      "Route": "admin/dashboard.mzel58aid1.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\dashboard.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29288"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IqRsTiGEyDQrIMVbWhc2XSi58axmAcuAcW02h2XIo4k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 11:10:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mzel58aid1"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/dashboard.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IqRsTiGEyDQrIMVbWhc2XSi58axmAcuAcW02h2XIo4k="
+        }
+      ]
+    },
+    {
+      "Route": "admin/discounts.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\discounts.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27903"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PAGEfpzD0bafLkF6yR52J5w60YJJvy8WN+R7wi9FSu8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 11:09:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PAGEfpzD0bafLkF6yR52J5w60YJJvy8WN+R7wi9FSu8="
+        }
+      ]
+    },
+    {
+      "Route": "admin/discounts.wp2g5uftyo.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\discounts.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27903"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PAGEfpzD0bafLkF6yR52J5w60YJJvy8WN+R7wi9FSu8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 11:09:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wp2g5uftyo"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/discounts.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PAGEfpzD0bafLkF6yR52J5w60YJJvy8WN+R7wi9FSu8="
+        }
+      ]
+    },
+    {
+      "Route": "admin/inventory.cey0h83mt3.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\inventory.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1463"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JC+Zin6dZQon7i3It/L97J2JhUOmF9fVTL0mwafHNf4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cey0h83mt3"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/inventory.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JC+Zin6dZQon7i3It/L97J2JhUOmF9fVTL0mwafHNf4="
+        }
+      ]
+    },
+    {
+      "Route": "admin/inventory.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\inventory.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1463"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JC+Zin6dZQon7i3It/L97J2JhUOmF9fVTL0mwafHNf4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JC+Zin6dZQon7i3It/L97J2JhUOmF9fVTL0mwafHNf4="
+        }
+      ]
+    },
+    {
+      "Route": "admin/Role.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\Role.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5608"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3Y0aKAs2dTDL4CEAp8h9BhJUcetBEQRWmRlYHy630iU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3Y0aKAs2dTDL4CEAp8h9BhJUcetBEQRWmRlYHy630iU="
+        }
+      ]
+    },
+    {
+      "Route": "admin/Role.jg9t95k6am.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\Role.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5608"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3Y0aKAs2dTDL4CEAp8h9BhJUcetBEQRWmRlYHy630iU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jg9t95k6am"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/Role.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3Y0aKAs2dTDL4CEAp8h9BhJUcetBEQRWmRlYHy630iU="
+        }
+      ]
+    },
+    {
+      "Route": "admin/styles.cgoiqm66kz.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1928"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tGGu3X7CmVSt5rp71XLHdBDRyPvRSHPdxNEM7oCLsL8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cgoiqm66kz"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tGGu3X7CmVSt5rp71XLHdBDRyPvRSHPdxNEM7oCLsL8="
+        }
+      ]
+    },
+    {
+      "Route": "admin/styles.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1928"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tGGu3X7CmVSt5rp71XLHdBDRyPvRSHPdxNEM7oCLsL8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tGGu3X7CmVSt5rp71XLHdBDRyPvRSHPdxNEM7oCLsL8="
+        }
+      ]
+    },
+    {
+      "Route": "admin/users.7h0ijmm7f0.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\users.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10068"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FQJUKgL3d9+RAENnP9XrzvO+XOn9bBc42BVZtb9rWYo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 11:09:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7h0ijmm7f0"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/users.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FQJUKgL3d9+RAENnP9XrzvO+XOn9bBc42BVZtb9rWYo="
+        }
+      ]
+    },
+    {
+      "Route": "admin/users.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\admin\\users.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10068"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FQJUKgL3d9+RAENnP9XrzvO+XOn9bBc42BVZtb9rWYo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 11:09:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-FQJUKgL3d9+RAENnP9XrzvO+XOn9bBc42BVZtb9rWYo="
+        }
+      ]
+    },
+    {
+      "Route": "Bookdetails.da6386zgiu.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Bookdetails.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30485"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"a63DgF0wbOyyHjr17Yo7tEoj9BSPF7gn3i/RzRkmQsg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "da6386zgiu"
+        },
+        {
+          "Name": "label",
+          "Value": "Bookdetails.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-a63DgF0wbOyyHjr17Yo7tEoj9BSPF7gn3i/RzRkmQsg="
+        }
+      ]
+    },
+    {
+      "Route": "Bookdetails.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Bookdetails.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30485"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"a63DgF0wbOyyHjr17Yo7tEoj9BSPF7gn3i/RzRkmQsg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-a63DgF0wbOyyHjr17Yo7tEoj9BSPF7gn3i/RzRkmQsg="
+        }
+      ]
+    },
+    {
+      "Route": "bookmarks.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\bookmarks.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29620"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1PA0icohrM8lbIU8z23kLfGBMEpYxQsT9SpKmg2NKX4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1PA0icohrM8lbIU8z23kLfGBMEpYxQsT9SpKmg2NKX4="
+        }
+      ]
+    },
+    {
+      "Route": "bookmarks.kctllp7j9c.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\bookmarks.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29620"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1PA0icohrM8lbIU8z23kLfGBMEpYxQsT9SpKmg2NKX4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kctllp7j9c"
+        },
+        {
+          "Name": "label",
+          "Value": "bookmarks.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1PA0icohrM8lbIU8z23kLfGBMEpYxQsT9SpKmg2NKX4="
+        }
+      ]
+    },
+    {
+      "Route": "Cart.6b4ypb0lq0.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Cart.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20767"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rrAcNzQEryi2XZ/z36kqBg7uJvYVIR5kL2hUQsTC6Jc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6b4ypb0lq0"
+        },
+        {
+          "Name": "label",
+          "Value": "Cart.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rrAcNzQEryi2XZ/z36kqBg7uJvYVIR5kL2hUQsTC6Jc="
+        }
+      ]
+    },
+    {
+      "Route": "Cart.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Cart.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20767"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rrAcNzQEryi2XZ/z36kqBg7uJvYVIR5kL2hUQsTC6Jc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rrAcNzQEryi2XZ/z36kqBg7uJvYVIR5kL2hUQsTC6Jc="
+        }
+      ]
+    },
+    {
+      "Route": "css/Books.72e1292m2m.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Books.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10538"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kVxKnDKs5lz81ibioxsREV2x0mwoJQSvNKJbJaBSk/8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72e1292m2m"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Books.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kVxKnDKs5lz81ibioxsREV2x0mwoJQSvNKJbJaBSk/8="
+        }
+      ]
+    },
+    {
+      "Route": "css/Books.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Books.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10538"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kVxKnDKs5lz81ibioxsREV2x0mwoJQSvNKJbJaBSk/8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kVxKnDKs5lz81ibioxsREV2x0mwoJQSvNKJbJaBSk/8="
+        }
+      ]
+    },
+    {
+      "Route": "css/Cart.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Cart.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5021"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3pE58fAgHcTDT4BVpxAcHA9EXo+qkrwIws2S90DDxO4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3pE58fAgHcTDT4BVpxAcHA9EXo+qkrwIws2S90DDxO4="
+        }
+      ]
+    },
+    {
+      "Route": "css/Cart.udz4aazkgn.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Cart.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5021"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3pE58fAgHcTDT4BVpxAcHA9EXo+qkrwIws2S90DDxO4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "udz4aazkgn"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Cart.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3pE58fAgHcTDT4BVpxAcHA9EXo+qkrwIws2S90DDxO4="
+        }
+      ]
+    },
+    {
+      "Route": "css/Login.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4242"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"21DDhWdA+l1ap5fuMf65qRBfuwd9DPJjIfPJ1UK9Tso=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-21DDhWdA+l1ap5fuMf65qRBfuwd9DPJjIfPJ1UK9Tso="
+        }
+      ]
+    },
+    {
+      "Route": "css/Login.rgwmri4xd8.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4242"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"21DDhWdA+l1ap5fuMf65qRBfuwd9DPJjIfPJ1UK9Tso=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rgwmri4xd8"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-21DDhWdA+l1ap5fuMf65qRBfuwd9DPJjIfPJ1UK9Tso="
+        }
+      ]
+    },
+    {
+      "Route": "css/Order.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Order.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3380"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G8buRczIbKLXlYLNG7ZdtWznus3mnrejPfZyacie00Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G8buRczIbKLXlYLNG7ZdtWznus3mnrejPfZyacie00Y="
+        }
+      ]
+    },
+    {
+      "Route": "css/Order.hluo9gy2et.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Order.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3380"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G8buRczIbKLXlYLNG7ZdtWznus3mnrejPfZyacie00Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hluo9gy2et"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Order.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G8buRczIbKLXlYLNG7ZdtWznus3mnrejPfZyacie00Y="
+        }
+      ]
+    },
+    {
+      "Route": "css/Register.cgw0w6pwp5.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Register.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5934"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tNM96Gd1lFqbP+6AWeFjroJweGuVl8THCgG2WZKCL9E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cgw0w6pwp5"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Register.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tNM96Gd1lFqbP+6AWeFjroJweGuVl8THCgG2WZKCL9E="
+        }
+      ]
+    },
+    {
+      "Route": "css/Register.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\Register.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5934"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tNM96Gd1lFqbP+6AWeFjroJweGuVl8THCgG2WZKCL9E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tNM96Gd1lFqbP+6AWeFjroJweGuVl8THCgG2WZKCL9E="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8763"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9587mqshvALeg/o3etm40mLW2IRlzL6vjSCJbmA6RTM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9587mqshvALeg/o3etm40mLW2IRlzL6vjSCJbmA6RTM="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.hmyzu6xojc.css",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\css\\styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8763"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9587mqshvALeg/o3etm40mLW2IRlzL6vjSCJbmA6RTM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hmyzu6xojc"
+        },
+        {
+          "Name": "label",
+          "Value": "css/styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9587mqshvALeg/o3etm40mLW2IRlzL6vjSCJbmA6RTM="
+        }
+      ]
+    },
+    {
+      "Route": "fetch.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\fetch.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17152"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yLUbdASkIhORXCW1t7qIvx6k8yLr2pV5n37ar9Pl0IU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yLUbdASkIhORXCW1t7qIvx6k8yLr2pV5n37ar9Pl0IU="
+        }
+      ]
+    },
+    {
+      "Route": "fetch.kdpjfx7li4.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\fetch.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17152"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yLUbdASkIhORXCW1t7qIvx6k8yLr2pV5n37ar9Pl0IU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kdpjfx7li4"
+        },
+        {
+          "Name": "label",
+          "Value": "fetch.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yLUbdASkIhORXCW1t7qIvx6k8yLr2pV5n37ar9Pl0IU="
+        }
+      ]
+    },
+    {
+      "Route": "Home.53zjsvoqzy.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Home.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40443"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YbA8gjmCui5f/TKwRGVZyNIeGc7sKB9dX5en1bs3ugA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 13:43:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "53zjsvoqzy"
+        },
+        {
+          "Name": "label",
+          "Value": "Home.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YbA8gjmCui5f/TKwRGVZyNIeGc7sKB9dX5en1bs3ugA="
+        }
+      ]
+    },
+    {
+      "Route": "Home.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Home.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40443"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YbA8gjmCui5f/TKwRGVZyNIeGc7sKB9dX5en1bs3ugA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 13:43:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YbA8gjmCui5f/TKwRGVZyNIeGc7sKB9dX5en1bs3ugA="
+        }
+      ]
+    },
+    {
+      "Route": "js/Login.gpvdwhrx05.js",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\js\\Login.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2164"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PCoMuBVh0jeWhxjZF6LzgnzjkM/sw+Koc6QAo4yD13c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gpvdwhrx05"
+        },
+        {
+          "Name": "label",
+          "Value": "js/Login.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PCoMuBVh0jeWhxjZF6LzgnzjkM/sw+Koc6QAo4yD13c="
+        }
+      ]
+    },
+    {
+      "Route": "js/Login.js",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\js\\Login.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2164"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PCoMuBVh0jeWhxjZF6LzgnzjkM/sw+Koc6QAo4yD13c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PCoMuBVh0jeWhxjZF6LzgnzjkM/sw+Koc6QAo4yD13c="
+        }
+      ]
+    },
+    {
+      "Route": "js/Register.js",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\js\\Register.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2/NRHCH+SLoa6eYKc08GFIrcW/Gs0St4q7JQSwvA86M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2/NRHCH+SLoa6eYKc08GFIrcW/Gs0St4q7JQSwvA86M="
+        }
+      ]
+    },
+    {
+      "Route": "js/Register.np878p0nij.js",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\js\\Register.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2/NRHCH+SLoa6eYKc08GFIrcW/Gs0St4q7JQSwvA86M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "np878p0nij"
+        },
+        {
+          "Name": "label",
+          "Value": "js/Register.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2/NRHCH+SLoa6eYKc08GFIrcW/Gs0St4q7JQSwvA86M="
+        }
+      ]
+    },
+    {
+      "Route": "Login.ghjng2pwn2.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1158"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nFVg37tcs2KENUP20FsyUwyEffOxCPq2otUE2PlHT+c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ghjng2pwn2"
+        },
+        {
+          "Name": "label",
+          "Value": "Login.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nFVg37tcs2KENUP20FsyUwyEffOxCPq2otUE2PlHT+c="
+        }
+      ]
+    },
+    {
+      "Route": "Login.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1158"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nFVg37tcs2KENUP20FsyUwyEffOxCPq2otUE2PlHT+c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nFVg37tcs2KENUP20FsyUwyEffOxCPq2otUE2PlHT+c="
+        }
+      ]
+    },
+    {
+      "Route": "order.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\order.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28627"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GPfSQuQlyoNCXJG0a0To2EJaZ9Q1No4Yxgu2m2l4lCo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GPfSQuQlyoNCXJG0a0To2EJaZ9Q1No4Yxgu2m2l4lCo="
+        }
+      ]
+    },
+    {
+      "Route": "order.kp8o5cijo3.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\order.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28627"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GPfSQuQlyoNCXJG0a0To2EJaZ9Q1No4Yxgu2m2l4lCo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kp8o5cijo3"
+        },
+        {
+          "Name": "label",
+          "Value": "order.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GPfSQuQlyoNCXJG0a0To2EJaZ9Q1No4Yxgu2m2l4lCo="
+        }
+      ]
+    },
+    {
+      "Route": "OrderConfirmation.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\OrderConfirmation.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12666"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KWVB+g2DG1f1MYD5Oi3D0GZliNQK6I4i4CC+h3QI9Iw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KWVB+g2DG1f1MYD5Oi3D0GZliNQK6I4i4CC+h3QI9Iw="
+        }
+      ]
+    },
+    {
+      "Route": "OrderConfirmation.vmuj51jivi.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\OrderConfirmation.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12666"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KWVB+g2DG1f1MYD5Oi3D0GZliNQK6I4i4CC+h3QI9Iw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vmuj51jivi"
+        },
+        {
+          "Name": "label",
+          "Value": "OrderConfirmation.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KWVB+g2DG1f1MYD5Oi3D0GZliNQK6I4i4CC+h3QI9Iw="
+        }
+      ]
+    },
+    {
+      "Route": "orders.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\orders.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30352"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"slOnzyjSFpq8ldxbqMK9NmoiTeWqdeGh+9SL1LfAaSY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-slOnzyjSFpq8ldxbqMK9NmoiTeWqdeGh+9SL1LfAaSY="
+        }
+      ]
+    },
+    {
+      "Route": "orders.ucklqme4hm.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\orders.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30352"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"slOnzyjSFpq8ldxbqMK9NmoiTeWqdeGh+9SL1LfAaSY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ucklqme4hm"
+        },
+        {
+          "Name": "label",
+          "Value": "orders.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-slOnzyjSFpq8ldxbqMK9NmoiTeWqdeGh+9SL1LfAaSY="
+        }
+      ]
+    },
+    {
+      "Route": "Register.fpfzcia7w0.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Register.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1607"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vVF50VGH/ECNzsYbOVJTyEYr42j/6a+WnS6NdOx/pag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fpfzcia7w0"
+        },
+        {
+          "Name": "label",
+          "Value": "Register.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vVF50VGH/ECNzsYbOVJTyEYr42j/6a+WnS6NdOx/pag="
+        }
+      ]
+    },
+    {
+      "Route": "Register.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\Register.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1607"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vVF50VGH/ECNzsYbOVJTyEYr42j/6a+WnS6NdOx/pag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vVF50VGH/ECNzsYbOVJTyEYr42j/6a+WnS6NdOx/pag="
+        }
+      ]
+    },
+    {
+      "Route": "review.eb6m672gng.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\review.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27445"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"htRCDGAEmHSbUAkIm1qkBwp2qydmUHWpXZfUaMFbmVw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "eb6m672gng"
+        },
+        {
+          "Name": "label",
+          "Value": "review.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-htRCDGAEmHSbUAkIm1qkBwp2qydmUHWpXZfUaMFbmVw="
+        }
+      ]
+    },
+    {
+      "Route": "review.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\review.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27445"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"htRCDGAEmHSbUAkIm1qkBwp2qydmUHWpXZfUaMFbmVw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-htRCDGAEmHSbUAkIm1qkBwp2qydmUHWpXZfUaMFbmVw="
+        }
+      ]
+    },
+    {
+      "Route": "staff.biz49iwfhf.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\staff.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42811"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w31ueoDwWIBFdxZA9d6RsZQMyhvNW5d6oUdPqtbMAqY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 09:05:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "biz49iwfhf"
+        },
+        {
+          "Name": "label",
+          "Value": "staff.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-w31ueoDwWIBFdxZA9d6RsZQMyhvNW5d6oUdPqtbMAqY="
+        }
+      ]
+    },
+    {
+      "Route": "staff.html",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\staff.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42811"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w31ueoDwWIBFdxZA9d6RsZQMyhvNW5d6oUdPqtbMAqY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 09:05:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-w31ueoDwWIBFdxZA9d6RsZQMyhvNW5d6oUdPqtbMAqY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/009c2cd9-39fb-4d17-b64a-4af33dfdbe5b.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\009c2cd9-39fb-4d17-b64a-4af33dfdbe5b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/009c2cd9-39fb-4d17-b64a-4af33dfdbe5b.tdnwfhd8od.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\009c2cd9-39fb-4d17-b64a-4af33dfdbe5b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdnwfhd8od"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/009c2cd9-39fb-4d17-b64a-4af33dfdbe5b.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/2b9e68f2-1e22-4211-a7a2-83af81dec73b.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\2b9e68f2-1e22-4211-a7a2-83af81dec73b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/2b9e68f2-1e22-4211-a7a2-83af81dec73b.tdnwfhd8od.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\2b9e68f2-1e22-4211-a7a2-83af81dec73b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdnwfhd8od"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/2b9e68f2-1e22-4211-a7a2-83af81dec73b.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/3298fe50-91f2-46a3-b07e-f1a4153a599c.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\3298fe50-91f2-46a3-b07e-f1a4153a599c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/3298fe50-91f2-46a3-b07e-f1a4153a599c.tdnwfhd8od.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\3298fe50-91f2-46a3-b07e-f1a4153a599c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdnwfhd8od"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/3298fe50-91f2-46a3-b07e-f1a4153a599c.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/35850235-d635-4b7d-a705-fb1cdaa127dd.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\35850235-d635-4b7d-a705-fb1cdaa127dd.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/35850235-d635-4b7d-a705-fb1cdaa127dd.tdnwfhd8od.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\35850235-d635-4b7d-a705-fb1cdaa127dd.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdnwfhd8od"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/35850235-d635-4b7d-a705-fb1cdaa127dd.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/5fa52a03-5e31-4ad5-9ca6-80463841b8c9.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\5fa52a03-5e31-4ad5-9ca6-80463841b8c9.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/5fa52a03-5e31-4ad5-9ca6-80463841b8c9.tdnwfhd8od.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\5fa52a03-5e31-4ad5-9ca6-80463841b8c9.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdnwfhd8od"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/5fa52a03-5e31-4ad5-9ca6-80463841b8c9.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6d45e4a3-d0cb-4426-882d-e6655c084d6d.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\6d45e4a3-d0cb-4426-882d-e6655c084d6d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6d45e4a3-d0cb-4426-882d-e6655c084d6d.tdnwfhd8od.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\6d45e4a3-d0cb-4426-882d-e6655c084d6d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdnwfhd8od"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/6d45e4a3-d0cb-4426-882d-e6655c084d6d.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/77151b48-5b14-497f-9968-48f4480cdb58.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\77151b48-5b14-497f-9968-48f4480cdb58.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/77151b48-5b14-497f-9968-48f4480cdb58.tdnwfhd8od.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\77151b48-5b14-497f-9968-48f4480cdb58.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdnwfhd8od"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/77151b48-5b14-497f-9968-48f4480cdb58.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/833d0712-b935-40c9-879c-d05c903a728e.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\833d0712-b935-40c9-879c-d05c903a728e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/833d0712-b935-40c9-879c-d05c903a728e.tdnwfhd8od.png",
+      "AssetFile": "C:\\Users\\ASUS\\OneDrive - London Metropolitan University\\abc\\Workshop\\Workshop\\wwwroot\\uploads\\833d0712-b935-40c9-879c-d05c903a728e.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "126506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 08:44:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tdnwfhd8od"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/833d0712-b935-40c9-879c-d05c903a728e.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-n57hX5m/ZLHBeu8e3cRy+2rHyuBcNnbdPZJhDyXh0FI="
+        }
+      ]
+    }
+  ]
+}
